@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Rubik', sans-serif;
+  direction: rtl;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --navy:        #1B3A6B;
+  --navy-dark:   #0f2549;
+  --white:       #ffffff;
+  --gray-light:  #f7f8fc;
+  --gray-text:   #555555;
+  --gray-border: #e0e6f0;
+  --nav-height:  64px;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+.section { display: none; }
+.section.active { display: block; }
+
+/* ===== SECTION HEADERS ===== */
+.section-label {
+  color: var(--navy);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  opacity: 0.6;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.section-h2 {
+  color: var(--navy);
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  padding: 13px 34px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--navy-dark); }
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  padding: 13px 34px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+  text-decoration: none;
+}
+.btn-outline:hover { background: var(--gray-light); }
+
+/* ===== NAVBAR ===== */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  height: var(--nav-height);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { color: var(--white); font-size: 18px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.nav-logo span { font-weight: 300; font-size: 14px; opacity: 0.85; margin-right: 4px; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+.nav-cta {
+  background: var(--white);
+  color: var(--navy);
+  padding: 9px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: #e8edf5; }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--white);
+  padding: 80px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-border);
+}
+.hero-label {
+  color: var(--navy);
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+.hero-title {
+  color: var(--navy);
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.35;
+  margin-bottom: 20px;
+}
+.hero-title strong { font-weight: 700; }
+.hero-body {
+  color: var(--gray-text);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-buttons { display: flex; gap: 16px; justify-content: center; }
+
+/* ===== ABOUT STRIP ===== */
+.about-strip { background: var(--navy); padding: 60px 0; }
+.about-strip-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.about-strip-title { color: var(--white); font-size: 22px; font-weight: 600; margin-bottom: 24px; }
+.about-strip-text { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.9; }
+.about-strip-text p { margin-bottom: 14px; }
+.about-strip-text p:last-child { margin-bottom: 0; }
+.license-tag {
+  display: inline-block;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+/* ===== SERVICES ===== */
+.services { background: var(--gray-light); padding: 72px 0; }
+.service-cards { display: flex; gap: 28px; }
+.service-card {
+  flex: 1;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 36px 32px;
+  border: 1px solid var(--gray-border);
+  box-shadow: 0 2px 12px rgba(27,58,107,0.06);
+}
+.service-icon { font-size: 30px; margin-bottom: 16px; }
+.service-card h3 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.service-card p { color: var(--gray-text); font-size: 14px; line-height: 1.75; margin-bottom: 20px; }
+.service-link {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 1px;
+  cursor: pointer;
+}
+
+/* ===== PAGE HERO (inner pages) ===== */
+.page-hero {
+  background: var(--navy);
+  padding: 60px 0;
+  text-align: center;
+  color: var(--white);
+}
+.page-hero h2 { font-size: 36px; font-weight: 300; margin-bottom: 10px; }
+.page-hero h2 strong { font-weight: 700; }
+.page-hero p { font-size: 15px; opacity: 0.75; margin-top: 8px; }
+
+/* ===== CONTENT SECTIONS ===== */
+.content-section { padding: 72px 0; }
+.content-section.gray { background: var(--gray-light); }
+.two-col { display: flex; gap: 56px; align-items: flex-start; }
+.two-col .text-col { flex: 1; }
+.two-col h3 { color: var(--navy); font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+.two-col p { color: var(--gray-text); font-size: 15px; line-height: 1.85; margin-bottom: 16px; }
+
+/* ===== BENEFIT CARDS 2x2 ===== */
+.benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.benefit-card {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: 10px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 8px rgba(27,58,107,0.05);
+}
+.benefit-card .bicon { font-size: 26px; margin-bottom: 12px; }
+.benefit-card h4 { color: var(--navy); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.benefit-card p { color: var(--gray-text); font-size: 13px; line-height: 1.7; margin: 0; }
+
+/* ===== CONTACT STRIP (funds page) ===== */
+.contact-strip {
+  background: var(--navy);
+  padding: 52px 0;
+  text-align: center;
+  color: var(--white);
+}
+.contact-strip p { opacity: 0.8; font-size: 15px; margin-bottom: 28px; }
+.contact-info { display: flex; gap: 48px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.contact-detail { font-size: 15px; }
+.contact-detail strong { display: block; font-size: 18px; margin-bottom: 4px; }
+.contact-detail a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.contact-detail a:hover { color: var(--white); text-decoration: underline; }
+
+/* ===== CTA STRIP ===== */
+.cta-strip { background: var(--gray-light); padding: 64px 0; text-align: center; }
+.cta-strip h3 { color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 28px; }
+
+/* ===== ABOUT PAGE ===== */
+.values-strip { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 48px; }
+.value-pill {
+  background: var(--navy);
+  color: var(--white);
+  padding: 10px 32px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.key-numbers { display: flex; flex-direction: column; gap: 20px; min-width: 190px; }
+.key-number {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+}
+.key-number .num { font-size: 28px; font-weight: 700; }
+.key-number .lbl { font-size: 12px; opacity: 0.75; margin-top: 4px; }
+
+/* ===== CONTACT PAGE ===== */
+.contact-layout { display: flex; gap: 56px; align-items: flex-start; }
+.contact-card {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 40px 36px;
+  min-width: 270px;
+}
+.contact-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.contact-card .role { opacity: 0.7; font-size: 14px; margin-bottom: 32px; }
+.contact-card .cline { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-size: 15px; }
+.contact-card a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.contact-card a:hover { color: var(--white); text-decoration: underline; }
+.contact-form { flex: 1; }
+.contact-form .field { margin-bottom: 20px; }
+.contact-form label { display: block; color: var(--navy); font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: 6px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: var(--white);
+  direction: rtl;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus { outline: none; border-color: var(--navy); }
+.contact-form textarea { height: 130px; resize: vertical; }
+.form-success {
+  display: none;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 16px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 16px;
+  border: 1px solid #a5d6a7;
+}
+
+/* ===== FOOTER ===== */
+.site-footer { background: var(--navy-dark); color: var(--white); }
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 48px 0 40px;
+}
+.footer-logo-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.footer-logo-name span { font-weight: 300; font-size: 14px; }
+.footer-legal { color: rgba(255,255,255,0.45); font-size: 11px; max-width: 240px; line-height: 1.65; margin-top: 8px; }
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 0;
+  text-align: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: var(--nav-height); right: 0; left: 0; background: var(--navy-dark); padding: 12px 0; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 24px; border-bottom: none !important; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-title { font-size: 28px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .service-cards { flex-direction: column; }
+  .benefit-grid { grid-template-columns: 1fr; }
+  .two-col { flex-direction: column; }
+  .key-numbers { flex-direction: row; flex-wrap: wrap; min-width: unset; }
+  .contact-layout { flex-direction: column; }
+  .contact-card { min-width: unset; width: 100%; }
+  .contact-info { flex-direction: column; gap: 20px; }
+  .footer-main { flex-direction: column; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar"></nav>
+
+<div id="section-home"      class="section active"></div>
+<div id="section-funds"     class="section"></div>
+<div id="section-portfolio" class="section"></div>
+<div id="section-about"     class="section"></div>
+<div id="section-contact"   class="section"></div>
+
+<script>
+// ============================================================
+// CONTENT Γאפ ╫ó╫¿╫ץ╫ת ╫¢╫נ╫ƒ ╫נ╫¬ ╫¢╫£ ╫פ╫ר╫º╫í╫ר╫ש╫¥, ╫ץ╫¿╫º ╫¢╫נ╫ƒ
+// ============================================================
+const CONTENT = {
+  site: {
+    name: '╫í╫£╫ó',
+    tagline: '╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬',
+    legal: '╫פ╫נ╫¬╫¿ ╫נ╫ש╫á╫ץ ╫₧╫פ╫ץ╫ץ╫פ ╫פ╫₧╫£╫ª╫פ ╫£╫¿╫¢╫ש╫⌐╫פ ╫נ╫ץ ╫₧╫¢╫ש╫¿╫פ ╫⌐╫£ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת. ╫פ╫פ╫⌐╫º╫ó╫פ ╫¢╫¿╫ץ╫¢╫פ ╫ס╫í╫ש╫¢╫ץ╫ƒ.',
+    copyright: '┬⌐ 2026 ╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬. ╫¢╫£ ╫פ╫צ╫¢╫ץ╫ש╫ץ╫¬ ╫⌐╫₧╫ץ╫¿╫ץ╫¬.',
+  },
+  nav: [
+    { id: 'home',      label: '╫¿╫נ╫⌐╫ש' },
+    { id: 'funds',     label: '╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬' },
+    { id: 'portfolio', label: '╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥' },
+    { id: 'about',     label: '╫נ╫ץ╫ף╫ץ╫¬' },
+    { id: 'contact',   label: '╫ª╫ץ╫¿ ╫º╫⌐╫¿' },
+  ],
+  home: {
+    heroLabel: 'SELA INVESTMENT HOUSE',
+    heroTitle: '╫á╫ש╫פ╫ץ╫£ ╫ó╫ץ╫⌐╫¿ ╫₧╫º╫ª╫ץ╫ó╫ש',
+    heroTitleStrong: '╫ס╫ע╫ש╫⌐╫פ ╫נ╫ש╫⌐╫ש╫¬',
+    heroBody: '╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬ ╫ץ╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥ ╫פ╫₧╫ץ╫¬╫נ╫₧╫ש╫¥ ╫£╫ª╫¿╫¢╫ש╫¥ ╫⌐╫£╫ת, ╫ó╫¥ ╫á╫ש╫í╫ש╫ץ╫ƒ ╫⌐╫£ ╫⌐╫á╫ש╫¥ ╫ס╫⌐╫ץ╫ץ╫º╫ש ╫פ╫פ╫ץ╫ƒ ╫פ╫ש╫⌐╫¿╫נ╫£╫ש ╫ץ╫פ╫ó╫ץ╫£╫₧╫ש.',
+    heroBtnFunds: '╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬',
+    heroBtnPortfolio: '╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥',
+    aboutLabel: '╫נ╫ץ╫ף╫ץ╫¬ ╫פ╫ק╫ס╫¿╫פ',
+    aboutTitle: '╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬',
+    aboutP1: '╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫פ╫ץ╫º╫₧╫פ ╫ס╫⌐╫á╫¬ 2016 ╫ץ╫פ╫ש╫á╫פ ╫ק╫ס╫¿╫פ ╫פ╫₧╫¬╫ó╫í╫º╫¬ ╫ס╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫£╫£╫º╫ץ╫ק╫ץ╫¬ ╫ñ╫¿╫ר╫ש╫ש╫¥ ╫ץ╫ק╫ס╫¿╫ץ╫¬ ╫ץ╫ס╫á╫ש╫פ╫ץ╫£ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫⌐╫£ ╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬. ╫פ╫ק╫ס╫¿╫פ ╫₧╫í╫ñ╫º╫¬ ╫£╫£╫º╫ץ╫ק╫ץ╫¬╫ש╫פ ╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ס╫נ╫ñ╫ש╫º╫ש╫¥ ╫⌐╫ץ╫á╫ש╫¥ ╫ץ╫₧╫ע╫ץ╫ץ╫á╫ש╫¥.',
+    aboutP2: '╫פ╫ק╫ס╫¿╫פ ╫₧╫₧╫ץ╫º╫ף╫¬ ╫ס╫ª╫¿╫¢╫ש╫ץ ╫פ╫נ╫ש╫⌐╫ש╫ש╫¥ ╫⌐╫£ ╫פ╫£╫º╫ץ╫ק ╫ץ╫₧╫í╫ñ╫º╫¬ ╫₧╫ע╫ץ╫ץ╫ƒ ╫¿╫ק╫ס ╫⌐╫£ ╫₧╫ץ╫ª╫¿╫ש╫¥ ╫ס╫¬╫ק╫ץ╫¥ ╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫⌐╫₧╫נ╫ñ╫⌐╫¿╫ש╫¥ ╫£╫פ╫ע╫ש╫ó ╫£╫ש╫ó╫ש╫£╫ץ╫¬ ╫נ╫ץ╫ñ╫ר╫ש╫₧╫£╫ש╫¬ ╫ó╫£ ╫ש╫ף╫ש ╫⌐╫ש╫¬╫ץ╫ú ╫ñ╫ó╫ץ╫£╫פ ╫ó╫¥ ╫ק╫ף╫¿╫ש ╫ó╫í╫º╫נ╫ץ╫¬ ╫⌐╫£ ╫פ╫ס╫á╫º╫ש╫¥ ╫פ╫ע╫ף╫ץ╫£╫ש╫¥ ╫ס╫נ╫¿╫Ñ ╫ץ╫ס╫ק╫ץ"╫£. ╫פ╫ק╫ס╫¿╫פ ╫₧╫נ╫₧╫ש╫á╫פ ╫ס╫¿╫₧╫¬ ╫₧╫º╫ª╫ץ╫ó╫ש╫ץ╫¬ ╫ץ╫נ╫₧╫ש╫á╫ץ╫¬ ╫ע╫ס╫ץ╫פ╫פ, ╫צ╫₧╫ש╫á╫ץ╫¬ ╫ס╫¢╫£ ╫ó╫¬ ╫ץ╫₧╫¬╫ƒ ╫₧╫ó╫á╫פ ╫₧╫פ╫ש╫¿ ╫ס╫פ╫¬╫נ╫¥ ╫£╫ף╫¿╫ש╫⌐╫¬ ╫פ╫£╫º╫ץ╫ק.',
+    aboutP3: '╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ñ╫ץ╫ó╫£╫¬ ╫ó╫£-╫ñ╫ש ╫₧╫í╫ñ╫¿ ╫¿╫ש╫⌐╫ש╫ץ╫ƒ 769, ╫£╫ñ╫ש ╫ק╫ץ╫º ╫פ╫í╫ף╫¿╫¬ ╫פ╫ó╫ש╫í╫ץ╫º ╫ס╫ש╫ש╫ó╫ץ╫Ñ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ס╫⌐╫ש╫ץ╫ץ╫º ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ץ╫ס╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬, ╫פ╫¬╫⌐╫á"╫פ-1995. ╫פ╫ק╫ס╫¿╫פ ╫₧╫á╫פ╫£╫¬ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ס╫₧╫ע╫ץ╫ץ╫ƒ ╫¿╫ק╫ס ╫⌐╫£ ╫¬╫ק╫ץ╫₧╫ש╫¥ ╫ץ╫ñ╫ó╫ש╫£╫פ ╫ס╫¬╫ק╫ץ╫¥ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫פ╫ó╫¿╫ת ╫£╫¿╫ס╫ץ╫¬: ╫₧╫á╫ש╫ץ╫¬ ╫ס╫נ╫¿╫Ñ ╫ץ╫ס╫ק╫ץ"╫£, ╫נ╫ע╫¿╫ץ╫¬ ╫ק╫ץ╫ס ╫₧╫₧╫⌐╫£╫¬╫ש╫ץ╫¬ ╫ץ╫נ╫ע╫¿╫ץ╫¬ ╫ק╫ץ╫ס ╫⌐╫£ ╫ק╫ס╫¿╫ץ╫¬, ╫נ╫ע╫¿╫ץ╫¬ ╫ק╫ץ╫ס ╫ס╫⌐╫ץ╫ץ╫º╫ש╫¥ ╫⌐╫ץ╫á╫ש╫¥ ╫ס╫ó╫ץ╫£╫¥.',
+    aboutLicense: '╫¿╫ש╫⌐╫ש╫ץ╫ƒ ╫₧╫í╫│ 769 Γאפ ╫¿╫⌐╫ץ╫¬ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת',
+    servicesLabel: '╫פ╫ñ╫¬╫¿╫ץ╫á╫ץ╫¬ ╫⌐╫£╫á╫ץ',
+    servicesTitle: '╫¢╫ש╫ª╫ף ╫á╫ץ╫¢╫£ ╫£╫ó╫צ╫ץ╫¿ ╫£╫ת?',
+    fundIcon: '≡ƒףט',
+    fundTitle: '╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬',
+    fundDesc: '╫₧╫¢╫⌐╫ש╫¿ ╫פ╫⌐╫º╫ó╫פ ╫פ╫₧╫נ╫ñ╫⌐╫¿ ╫£╫₧╫⌐╫º╫ש╫ó╫ש╫¥ ╫¿╫ס╫ש╫¥ ╫£╫פ╫⌐╫º╫ש╫ó ╫ס╫₧╫⌐╫ץ╫¬╫ú ╫ס╫₧╫ע╫ץ╫ץ╫ƒ ╫נ╫ñ╫ש╫º╫ש╫¥ Γאפ ╫₧╫á╫ש╫ץ╫¬, ╫נ╫ע╫ק, ╫ץ╫¬╫ó╫ץ╫ף╫ץ╫¬ ╫í╫£ Γאפ ╫ס╫á╫ש╫פ╫ץ╫£ ╫₧╫º╫ª╫ץ╫ó╫ש ╫ץ╫₧╫ñ╫ץ╫º╫ק.',
+    fundLink: '╫£╫₧╫ף ╫ó╫ץ╫ף Γזנ',
+    portfolioIcon: '≡ƒע╝',
+    portfolioTitle: '╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥',
+    portfolioDesc: '╫¬╫ש╫º ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫נ╫ש╫⌐╫ש ╫פ╫₧╫ץ╫¬╫נ╫¥ ╫ס╫ף╫ש╫ץ╫º ╫£╫ª╫¿╫¢╫ש╫¥ ╫⌐╫£╫ת Γאפ ╫£╫ש╫ó╫ף╫ש╫¥, ╫£╫ר╫ץ╫ץ╫ק ╫פ╫צ╫₧╫ƒ ╫ץ╫£╫¿╫₧╫¬ ╫פ╫í╫ש╫¢╫ץ╫ƒ. ╫á╫ש╫פ╫ץ╫£ ╫⌐╫ץ╫ר╫ú ╫ץ╫ף╫ש╫ץ╫ץ╫ק ╫₧╫£╫נ.',
+    portfolioLink: '╫£╫₧╫ף ╫ó╫ץ╫ף Γזנ',
+  },
+  funds: {
+    label: '╫פ╫⌐╫º╫ó╫ץ╫¬',
+    title: '╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬',
+    whatTitle: '╫₧╫פ╫ש ╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬?',
+    whatP1: '╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬ ╫פ╫ש╫נ ╫₧╫¢╫⌐╫ש╫¿ ╫פ╫⌐╫º╫ó╫פ ╫ס╫⌐╫ץ╫º ╫פ╫פ╫ץ╫ƒ, ╫פ╫₧╫נ╫ñ╫⌐╫¿ ╫£╫₧╫í╫ñ╫¿ ╫¿╫ס ╫⌐╫£ ╫₧╫⌐╫º╫ש╫ó╫ש╫¥ ╫£╫פ╫⌐╫º╫ש╫ó ╫ס╫₧╫⌐╫ץ╫¬╫ú ╫ס╫₧╫ע╫ץ╫ץ╫ƒ ╫נ╫ñ╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫פ ╫ץ╫₧╫¢╫⌐╫ש╫¿╫ש╫¥ ╫ñ╫ש╫á╫á╫í╫ש╫ש╫¥, ╫¢╫ע╫ץ╫ƒ ╫₧╫á╫ש╫ץ╫¬, ╫נ╫ש╫ע╫¿╫ץ╫¬ ╫ק╫ץ╫ס ╫₧╫₧╫⌐╫£╫¬╫ש╫ץ╫¬, ╫נ╫ש╫ע╫¿╫ץ╫¬ ╫ק╫ץ╫ס ╫º╫ץ╫á╫ª╫¿╫á╫ש╫ץ╫¬ ╫ץ╫¬╫ó╫ץ╫ף╫ץ╫¬ ╫í╫£.',
+    whatP2: '╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬, ╫£╫ó╫ץ╫₧╫¬ ╫פ╫⌐╫º╫ó╫פ ╫ש╫⌐╫ש╫¿╫פ ╫ס╫⌐╫ץ╫º ╫פ╫פ╫ץ╫ƒ, ╫₧╫נ╫ñ╫⌐╫¿╫¬ ╫ע╫¥ ╫£╫₧╫⌐╫º╫ש╫ó ╫ק╫í╫¿ ╫á╫ש╫í╫ש╫ץ╫ƒ ╫£╫פ╫⌐╫ש╫ע ╫ק╫⌐╫ש╫ñ╫פ ╫¿╫ק╫ס╫פ ╫£╫₧╫ע╫ץ╫ץ╫ƒ ╫ñ╫ó╫ש╫£╫ץ╫ש╫ץ╫¬ ╫ץ╫á╫¢╫í╫ש╫¥ ╫ס╫⌐╫ץ╫º╫ש ╫פ╫פ╫ץ╫ƒ ╫ס╫נ╫¿╫Ñ ╫ץ╫ס╫ק╫ץ"╫£. ╫פ╫ק╫ס╫¿╫פ ╫פ╫₧╫á╫פ╫£╫¬ ╫נ╫¬ ╫פ╫º╫¿╫ƒ ╫ץ╫נ╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬╫ש╫פ ╫פ╫ש╫נ ╫ק╫ס╫¿╫פ ╫⌐╫¿╫⌐╫ץ╫¬ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת ╫נ╫ש╫⌐╫¿╫פ ╫נ╫ץ╫¬╫פ ╫ץ╫₧╫ñ╫º╫ק╫¬ ╫ó╫£ ╫ñ╫ó╫ש╫£╫ץ╫¬╫פ ╫פ╫⌐╫ץ╫ר╫ñ╫¬.',
+    whatP3: '╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬ ╫פ╫ש╫נ ╫£╫₧╫ó╫⌐╫פ ╫ק╫⌐╫ס╫ץ╫ƒ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת ╫₧╫⌐╫ץ╫¬╫ú, ╫⌐╫₧╫ר╫¿╫¬╫ץ ╫פ╫⌐╫º╫ó╫פ ╫₧╫⌐╫ץ╫¬╫ñ╫¬ ╫ס╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת ╫ץ╫פ╫ñ╫º╫¬ ╫¿╫ץ╫ץ╫ק╫ש╫¥ ╫₧╫⌐╫ץ╫¬╫ñ╫ש╫¥ ╫₧╫פ╫ק╫צ╫º╫¬╫¥ ╫ץ╫₧╫ó╫í╫º╫נ╫ץ╫¬ ╫ס╫פ╫¥. ╫₧╫á╫פ╫£ ╫פ╫º╫¿╫ƒ ╫₧╫º╫ס╫£ ╫פ╫ק╫£╫ר╫ץ╫¬ ╫£╫ע╫ס╫ש ╫נ╫ץ╫ñ╫ƒ ╫á╫ש╫פ╫ץ╫£ ╫פ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ס╫º╫¿╫ƒ ╫פ╫á╫נ╫₧╫á╫ץ╫¬, ╫ץ╫₧╫ר╫¿╫¬╫ץ ╫£╫פ╫⌐╫ש╫נ ╫¿╫ץ╫ץ╫ק╫ש╫¥ ╫ס╫נ╫₧╫ª╫ó╫ץ╫¬ ╫פ╫⌐╫º╫ó╫פ ╫ס╫⌐╫ץ╫º ╫פ╫פ╫ץ╫ƒ.',
+    benefitsTitle: '╫ש╫¬╫¿╫ץ╫á╫ץ╫¬ ╫פ╫פ╫⌐╫º╫ó╫פ ╫ס╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬',
+    benefits: [
+      { icon: '≡ƒפא', title: '╫ñ╫ש╫צ╫ץ╫¿ ╫¿╫ק╫ס', desc: '╫פ╫פ╫⌐╫º╫ó╫פ ╫ס╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬ ╫₧╫נ╫ץ╫ñ╫ש╫ש╫á╫¬ ╫ס╫ñ╫ש╫צ╫ץ╫¿ ╫¿╫ק╫ס ╫פ╫₧╫ª╫₧╫ª╫¥ ╫נ╫¬ ╫פ╫í╫ש╫¢╫ץ╫ƒ ╫פ╫¢╫¿╫ץ╫ת ╫ס╫פ ╫ץ╫ק╫ץ╫⌐╫ú ╫נ╫¬ ╫פ╫₧╫⌐╫º╫ש╫ó ╫£╫₧╫í╫ñ╫¿ ╫¿╫ס ╫⌐╫£ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת.' },
+      { icon: '≡ƒן¢∩╕ן', title: '╫á╫ש╫פ╫ץ╫£ ╫₧╫º╫ª╫ץ╫ó╫ש', desc: '╫á╫ש╫פ╫ץ╫£ ╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬ ╫₧╫¬╫ס╫ª╫ó ╫ó╫£ ╫ש╫ף╫ש ╫₧╫á╫פ╫£╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫₧╫º╫ª╫ץ╫ó╫ש╫ש╫¥ ╫ס╫ó╫£╫ש ╫¿╫ש╫⌐╫ש╫ץ╫ƒ ╫£╫á╫ש╫פ╫ץ╫£ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫₧╫ר╫ó╫¥ ╫פ╫¿╫⌐╫ץ╫¬ ╫£╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת.' },
+      { icon: '≡ƒע░', title: '╫ף╫ק╫ש╫ש╫¬ ╫₧╫í', desc: '╫º╫¿╫ƒ ╫á╫נ╫₧╫á╫ץ╫¬ ╫₧╫נ╫ñ╫⌐╫¿╫¬ ╫ף╫ק╫ש╫ש╫¬ ╫₧╫í ╫ץ╫פ╫⌐╫º╫ó╫פ ╫ק╫ץ╫צ╫¿╫¬ ╫⌐╫£ ╫º╫ץ╫ñ╫ץ╫á╫ש╫¥ ╫ץ╫ף╫ש╫ס╫ש╫ף╫á╫ף╫ש╫¥ ╫ץ╫פ╫ñ╫ש╫¢╫¬ ╫פ╫₧╫⌐╫º╫ש╫ó ╫£╫£╫º╫ץ╫ק ╫ס╫¿╫ץ╫ר╫ץ╫נ╫ש╫í╫ר.' },
+      { icon: '≡ƒסÑ', title: '╫á╫ע╫ש╫⌐╫ץ╫¬ ╫£╫¢╫ץ╫£╫¥', desc: '╫פ╫º╫¿╫ƒ ╫á╫ץ╫¬╫á╫¬ ╫נ╫ñ╫⌐╫¿╫ץ╫¬ ╫£╫₧╫⌐╫º╫ש╫ó╫ש╫¥ ╫º╫ר╫á╫ש╫¥ ╫¢╫ע╫ף╫ץ╫£╫ש╫¥ ╫£╫פ╫ש╫ק╫⌐╫ú ╫£╫פ╫⌐╫º╫ó╫פ ╫ס╫פ, ╫ס╫í╫¢╫ץ╫₧╫ש╫¥ ╫á╫₧╫ץ╫¢╫ש╫¥ ╫ש╫ק╫í╫ש╫¬.' },
+    ],
+    contactName: '╫ש╫ץ╫ס╫£ ╫נ╫פ╫¿╫ץ╫á╫ש',
+    contactRole: '╫⌐╫ש╫ץ╫ץ╫º ╫ס╫á╫º╫ש╫¥',
+    contactPhone: '052-4794858',
+    contactEmail: 'yuvala@sela-inv.co.il',
+    contactCta: '╫£╫ñ╫¿╫ר╫ש╫¥ ╫á╫ץ╫í╫ñ╫ש╫¥ ╫ó╫£ ╫º╫¿╫á╫ץ╫¬ ╫פ╫á╫נ╫₧╫á╫ץ╫¬ ╫⌐╫£╫á╫ץ, ╫ª╫¿╫ץ ╫º╫⌐╫¿:',
+  },
+  portfolio: {
+    label: '╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥',
+    title: '╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥',
+    subtitle: '╫ñ╫¬╫¿╫ץ╫ƒ ╫פ╫⌐╫º╫ó╫פ ╫נ╫ש╫⌐╫ש ╫פ╫₧╫ץ╫¬╫נ╫¥ ╫£╫ת',
+    whatTitle: '╫₧╫פ ╫צ╫פ ╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥?',
+    whatP1: '╫₧╫á╫פ╫£ ╫¬╫ש╫º╫ש╫¥ ╫₧╫º╫ª╫ץ╫ó╫ש ╫ס╫ץ╫á╫פ ╫ץ╫₧╫á╫פ╫£ ╫¬╫ש╫º ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫נ╫ש╫⌐╫ש ╫ס╫פ╫¬╫נ╫¥ ╫£╫ש╫ó╫ף╫ש╫¥, ╫£╫ר╫ץ╫ץ╫ק ╫פ╫צ╫₧╫ƒ ╫ץ╫£╫¿╫₧╫¬ ╫פ╫í╫ש╫¢╫ץ╫ƒ ╫⌐╫£ ╫¢╫£ ╫£╫º╫ץ╫ק. ╫ס╫⌐╫ץ╫á╫פ ╫₧╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬, ╫פ╫á╫ש╫פ╫ץ╫£ ╫פ╫ץ╫נ ╫נ╫ש╫⌐╫ש ╫£╫ק╫£╫ץ╫ר╫ש╫ƒ Γאפ ╫פ╫¬╫ש╫º ╫₧╫ץ╫¬╫נ╫¥ ╫£╫ª╫¿╫¢╫ש╫¥ ╫פ╫í╫ñ╫ª╫ש╫ñ╫ש╫ש╫¥ ╫⌐╫£╫ת ╫ץ╫£╫נ ╫£╫º╫פ╫£ ╫₧╫⌐╫º╫ש╫ó╫ש╫¥ ╫¢╫£╫£╫ש.',
+    whatP2: '╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫₧╫á╫פ╫£╫¬ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫¬╫ץ╫ת ╫פ╫º╫ñ╫ף╫פ ╫ó╫£ ╫₧╫ף╫ש╫á╫ש╫ץ╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ס╫¿╫ץ╫¿╫פ, ╫⌐╫º╫ש╫ñ╫ץ╫¬ ╫₧╫£╫נ╫פ ╫ץ╫ף╫ש╫ץ╫ץ╫ק ╫⌐╫ץ╫ר╫ú ╫£╫£╫º╫ץ╫ק. ╫נ╫á╫ץ ╫ó╫ץ╫ס╫ף╫ש╫¥ ╫ס╫⌐╫ש╫¬╫ץ╫ú ╫ñ╫ó╫ץ╫£╫פ ╫ó╫¥ ╫ק╫ף╫¿╫ש ╫ó╫í╫º╫נ╫ץ╫¬ ╫⌐╫£ ╫פ╫ס╫á╫º╫ש╫¥ ╫פ╫ע╫ף╫ץ╫£╫ש╫¥ ╫ס╫נ╫¿╫Ñ ╫ץ╫ס╫ק╫ץ"╫£.',
+    benefitsTitle: '╫ש╫¬╫¿╫ץ╫á╫ץ╫¬ ╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש╫¥',
+    benefits: [
+      { icon: '≡ƒמ»', title: '╫פ╫¬╫נ╫₧╫פ ╫נ╫ש╫⌐╫ש╫¬ ╫₧╫£╫נ╫פ', desc: '╫פ╫¬╫ש╫º ╫₧╫ץ╫¬╫נ╫¥ ╫ס╫ף╫ש╫ץ╫º ╫£╫ª╫¿╫¢╫ש╫¥, ╫£╫ש╫ó╫ף╫ש╫¥ ╫ץ╫£╫¿╫₧╫¬ ╫פ╫í╫ש╫¢╫ץ╫ƒ ╫⌐╫£╫ת Γאפ ╫£╫נ ╫ñ╫¬╫¿╫ץ╫ƒ ╫ע╫á╫¿╫ש.' },
+      { icon: '≡ƒפה', title: '╫ע╫₧╫ש╫⌐╫ץ╫¬ ╫ץ╫⌐╫£╫ש╫ר╫פ', desc: '╫á╫ש╫¬╫ƒ ╫£╫⌐╫á╫ץ╫¬ ╫נ╫¬ ╫₧╫ף╫ש╫á╫ש╫ץ╫¬ ╫פ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫ס╫¢╫£ ╫ó╫¬ ╫ס╫פ╫¬╫נ╫¥ ╫£╫⌐╫ש╫á╫ץ╫ש╫ש╫¥ ╫ס╫ª╫¿╫¢╫ש╫¥ ╫פ╫נ╫ש╫⌐╫ש╫ש╫¥ ╫נ╫ץ ╫ס╫⌐╫ץ╫º.' },
+      { icon: '≡ƒףך', title: '╫₧╫ó╫º╫ס ╫ץ╫ף╫ש╫ץ╫ץ╫ק ╫⌐╫ץ╫ר╫ú', desc: '╫ף╫ש╫ץ╫ץ╫ק ╫⌐╫º╫ץ╫ú ╫ץ╫₧╫£╫נ ╫ó╫£ ╫ס╫ש╫ª╫ץ╫ó╫ש ╫פ╫¬╫ש╫º, ╫פ╫¿╫¢╫ס╫ץ ╫ץ╫⌐╫ש╫á╫ץ╫ש╫ש╫¥ ╫⌐╫á╫ó╫⌐╫ץ ╫£╫נ╫ץ╫¿╫ת ╫פ╫צ╫₧╫ƒ.' },
+      { icon: '≡ƒ¢í∩╕ן', title: '╫á╫ש╫פ╫ץ╫£ ╫í╫ש╫¢╫ץ╫á╫ש╫¥ ╫ף╫ש╫á╫₧╫ש', desc: '╫פ╫¬╫נ╫₧╫¬ ╫ק╫⌐╫ש╫ñ╫¬ ╫פ╫í╫ש╫¢╫ץ╫ƒ ╫⌐╫£ ╫פ╫¬╫ש╫º ╫ס╫פ╫¬╫נ╫¥ ╫£╫⌐╫ש╫á╫ץ╫ש╫ש╫¥ ╫ס╫⌐╫ץ╫º ╫ץ╫ס╫₧╫ª╫ס ╫פ╫נ╫ש╫⌐╫ש ╫⌐╫£ ╫פ╫£╫º╫ץ╫ק.' },
+    ],
+    ctaText: '╫₧╫ó╫ץ╫á╫ש╫ש╫ƒ ╫£╫⌐╫₧╫ץ╫ó ╫ó╫ץ╫ף? ╫á╫⌐╫₧╫ק ╫£╫⌐╫ץ╫ק╫ק',
+    ctaBtn: '╫ª╫ץ╫¿ ╫º╫⌐╫¿',
+  },
+  about: {
+    label: '╫נ╫ץ╫ף╫ץ╫¬',
+    title: '╫נ╫ץ╫ף╫ץ╫¬ ╫í╫£╫ó',
+    p1: '╫í╫£╫ó ╫ס╫ש╫¬ ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫פ╫ץ╫º╫₧╫פ ╫ס╫⌐╫á╫¬ 2016 ╫₧╫¬╫ץ╫ת ╫נ╫₧╫ץ╫á╫פ ╫⌐╫¢╫£ ╫£╫º╫ץ╫ק ╫¿╫נ╫ץ╫ש ╫£╫á╫ש╫פ╫ץ╫£ ╫ó╫ץ╫⌐╫¿ ╫₧╫º╫ª╫ץ╫ó╫ש ╫ץ╫נ╫ש╫⌐╫ש. ╫נ╫á╫ץ ╫₧╫¬╫₧╫ק╫ש╫¥ ╫ס╫á╫ש╫פ╫ץ╫£ ╫¬╫ש╫º╫ש ╫פ╫⌐╫º╫ó╫ץ╫¬ ╫£╫ñ╫¿╫ר╫ש╫ש╫¥, ╫ק╫ס╫¿╫ץ╫¬ ╫ץ╫₧╫ץ╫í╫ף╫ץ╫¬, ╫ץ╫ס╫á╫ש╫פ╫ץ╫£ ╫º╫¿╫á╫ץ╫¬ ╫á╫נ╫₧╫á╫ץ╫¬.',
+    p2: '╫פ╫ע╫ש╫⌐╫פ ╫⌐╫£╫á╫ץ ╫₧╫₧╫ץ╫º╫ף╫¬ ╫ס╫£╫º╫ץ╫ק: ╫נ╫á╫ץ ╫₧╫º╫ף╫ש╫⌐╫ש╫¥ ╫צ╫₧╫ƒ ╫£╫פ╫ס╫ש╫ƒ ╫נ╫¬ ╫פ╫ª╫¿╫¢╫ש╫¥, ╫פ╫ש╫ó╫ף╫ש╫¥ ╫ץ╫¿╫₧╫¬ ╫פ╫í╫ש╫¢╫ץ╫ƒ ╫⌐╫£ ╫¢╫£ ╫£╫º╫ץ╫ק ╫£╫ñ╫á╫ש ╫ס╫á╫ש╫ש╫¬ ╫נ╫í╫ר╫¿╫ר╫ע╫ש╫ש╫¬ ╫פ╫פ╫⌐╫º╫ó╫פ. ╫נ╫á╫ץ ╫ó╫ץ╫ס╫ף╫ש╫¥ ╫ס╫⌐╫º╫ש╫ñ╫ץ╫¬ ╫₧╫£╫נ╫פ ╫ץ╫₧╫í╫ñ╫º╫ש╫¥ ╫₧╫ó╫á╫פ ╫₧╫פ╫ש╫¿ ╫ס╫¢╫£ ╫ó╫¬.',
+    p3: '╫פ╫ק╫ס╫¿╫פ ╫ñ╫ץ╫ó╫£╫¬ ╫ס╫ñ╫ש╫º╫ץ╫ק ╫¿╫⌐╫ץ╫¬ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת ╫¬╫ק╫¬ ╫¿╫ש╫⌐╫ש╫ץ╫ƒ ╫₧╫í╫│ 769 ╫£╫ñ╫ש ╫ק╫ץ╫º ╫פ╫í╫ף╫¿╫¬ ╫פ╫ó╫ש╫í╫ץ╫º ╫ס╫ש╫ש╫ó╫ץ╫Ñ ╫פ╫⌐╫º╫ó╫ץ╫¬. ╫נ╫á╫ץ ╫₧╫נ╫₧╫ש╫á╫ש╫¥ ╫⌐╫¿╫ע╫ץ╫£╫ª╫ש╫פ ╫ץ╫נ╫₧╫ש╫á╫ץ╫¬ ╫פ╫¥ ╫פ╫ס╫í╫ש╫í ╫£╫נ╫₧╫ץ╫ƒ ╫פ╫£╫º╫ץ╫ק╫ץ╫¬.',
+    license: '╫¿╫ש╫⌐╫ש╫ץ╫ƒ ╫₧╫í╫│ 769 Γאפ ╫¿╫⌐╫ץ╫¬ ╫á╫ש╫ש╫¿╫ץ╫¬ ╫ó╫¿╫ת',
+    values: ['╫₧╫º╫ª╫ץ╫ó╫ש╫ץ╫¬', '╫נ╫₧╫ש╫á╫ץ╫¬', '╫ע╫ש╫⌐╫פ ╫נ╫ש╫⌐╫ש╫¬'],
+    founded: '╫פ╫ץ╫º╫₧╫פ 2016',
+    regulated: '╫ñ╫ש╫º╫ץ╫ק ╫₧╫£╫נ',
+    personal: '╫á╫ש╫פ╫ץ╫£ ╫נ╫ש╫⌐╫ש',
+  },
+  contact: {
+    label: '╫ª╫ץ╫¿ ╫º╫⌐╫¿',
+    title: '╫á╫⌐╫₧╫ק ╫£╫⌐╫₧╫ץ╫ó ╫₧╫₧╫ת',
+    subtitle: '╫ª╫ץ╫ץ╫¬ ╫í╫£╫ó ╫צ╫₧╫ש╫ƒ ╫£╫ó╫á╫ץ╫¬ ╫ó╫£ ╫¢╫£ ╫⌐╫נ╫£╫פ',
+    contactName: '╫ש╫ץ╫ס╫£ ╫נ╫פ╫¿╫ץ╫á╫ש',
+    contactRole: '╫⌐╫ש╫ץ╫ץ╫º ╫ס╫á╫º╫ש╫¥',
+    contactPhone: '052-4794858',
+    contactEmail: 'yuvala@sela-inv.co.il',
+    formName: '╫⌐╫¥ ╫₧╫£╫נ',
+    formPhone: '╫ר╫£╫ñ╫ץ╫ƒ',
+    formMessage: '╫פ╫ץ╫ף╫ó╫פ',
+    formBtn: '╫⌐╫£╫ק ╫פ╫ץ╫ף╫ó╫פ',
+    formSuccess: '╫¬╫ץ╫ף╫פ! ╫º╫ש╫ס╫£╫á╫ץ ╫נ╫¬ ╫ñ╫á╫ש╫ש╫¬╫ת ╫ץ╫á╫ק╫צ╫ץ╫¿ ╫נ╫£╫ש╫ת ╫ס╫פ╫º╫ף╫¥.',
+  },
+};
+// ============================================================
+// END CONTENT
+// ============================================================
+
+// ===== NAVIGATION =====
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.dataset.section === id);
+  });
+  window.location.hash = id;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // close mobile menu
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ===== FOOTER HTML =====
+function buildFooterHTML() {
+  const s = CONTENT.site;
+  const links = CONTENT.nav.map(n =>
+    `<a onclick="showSection('${n.id}')">${n.label}</a>`
+  ).join('');
+  return `
+    <div class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div>
+            <div class="footer-logo-name">${s.name} <span>${s.tagline}</span></div>
+            <div class="footer-legal">${s.legal}</div>
+          </div>
+          <div class="footer-links">${links}</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">${s.copyright}</div>
+      </div>
+    </div>`;
+}
+
+// ===== BUILD NAVBAR =====
+function buildNavbar() {
+  const nav = document.getElementById('navbar');
+  const links = CONTENT.nav.map(item =>
+    `<a data-section="${item.id}" onclick="showSection('${item.id}')">${item.label}</a>`
+  ).join('');
+  nav.innerHTML = `
+    <div class="container">
+      <div class="nav-inner">
+        <button class="nav-cta" onclick="showSection('contact')">${CONTENT.nav[4].label}</button>
+        <ul class="nav-links" id="navLinks">${links}</ul>
+        <div class="nav-logo" onclick="showSection('home')">
+          ${CONTENT.site.name} <span>${CONTENT.site.tagline}</span>
+        </div>
+        <button class="nav-hamburger" onclick="toggleMenu()" aria-label="╫¬╫ñ╫¿╫ש╫ר">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>`;
+  document.querySelector(`.nav-links a[data-section="home"]`).classList.add('active');
+}
+
+// ===== BUILD HOME =====
+function buildHome() {
+  const c = CONTENT.home;
+  document.getElementById('section-home').innerHTML = `
+    <div class="hero">
+      <div class="container">
+        <div class="hero-label">${c.heroLabel}</div>
+        <h1 class="hero-title">${c.heroTitle} <strong>${c.heroTitleStrong}</strong></h1>
+        <p class="hero-body">${c.heroBody}</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="showSection('funds')">${c.heroBtnFunds}</button>
+          <button class="btn-outline" onclick="showSection('portfolio')">${c.heroBtnPortfolio}</button>
+        </div>
+      </div>
+    </div>
+    <div class="about-strip">
+      <div class="container">
+        <div class="about-strip-label">${c.aboutLabel}</div>
+        <div class="about-strip-title">${c.aboutTitle}</div>
+        <div class="about-strip-text">
+          <p>${c.aboutP1}</p>
+          <p>${c.aboutP2}</p>
+          <p>${c.aboutP3}</p>
+          <span class="license-tag">${c.aboutLicense}</span>
+        </div>
+      </div>
+    </div>
+    <div class="services">
+      <div class="container">
+        <div class="section-label">${c.servicesLabel}</div>
+        <h2 class="section-h2">${c.servicesTitle}</h2>
+        <div class="service-cards">
+          <div class="service-card">
+            <div class="service-icon">${c.fundIcon}</div>
+            <h3>${c.fundTitle}</h3>
+            <p>${c.fundDesc}</p>
+            <a class="service-link" onclick="showSection('funds')">${c.fundLink}</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">${c.portfolioIcon}</div>
+            <h3>${c.portfolioTitle}</h3>
+            <p>${c.portfolioDesc}</p>
+            <a class="service-link" onclick="showSection('portfolio')">${c.portfolioLink}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+// ===== BUILD FUNDS =====
+function buildFunds() {
+  const c = CONTENT.funds;
+  const benefits = c.benefits.map(b => `
+    <div class="benefit-card">
+      <div class="bicon">${b.icon}</div>
+      <h4>${b.title}</h4>
+      <p>${b.desc}</p>
+    </div>`).join('');
+  document.getElementById('section-funds').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>${c.title}</strong></h2>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container">
+        <div class="two-col">
+          <div class="text-col">
+            <h3>${c.whatTitle}</h3>
+            <p>${c.whatP1}</p>
+            <p>${c.whatP2}</p>
+            <p>${c.whatP3}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-section gray">
+      <div class="container">
+        <div class="section-label">${c.benefitsTitle}</div>
+        <h2 class="section-h2">${c.benefitsTitle}</h2>
+        <div class="benefit-grid">${benefits}</div>
+      </div>
+    </div>
+    <div class="contact-strip">
+      <div class="container">
+        <p>${c.contactCta}</p>
+        <div class="contact-info">
+          <div class="contact-detail">
+            <strong>${c.contactName}</strong>
+            ${c.contactRole}
+          </div>
+          <div class="contact-detail">
+            <a href="tel:${c.contactPhone}">≡ƒף₧ ${c.contactPhone}</a>
+          </div>
+          <div class="contact-detail">
+            <a href="mailto:${c.contactEmail}">Γ£י ${c.contactEmail}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+// ===== BUILD PORTFOLIO =====
+function buildPortfolio() {
+  const c = CONTENT.portfolio;
+  const benefits = c.benefits.map(b => `
+    <div class="benefit-card">
+      <div class="bicon">${b.icon}</div>
+      <h4>${b.title}</h4>
+      <p>${b.desc}</p>
+    </div>`).join('');
+  document.getElementById('section-portfolio').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>${c.title}</strong></h2>
+        <p>${c.subtitle}</p>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container">
+        <div class="two-col">
+          <div class="text-col">
+            <h3>${c.whatTitle}</h3>
+            <p>${c.whatP1}</p>
+            <p>${c.whatP2}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-section gray">
+      <div class="container">
+        <div class="section-label">${c.benefitsTitle}</div>
+        <h2 class="section-h2">${c.benefitsTitle}</h2>
+        <div class="benefit-grid">${benefits}</div>
+      </div>
+    </div>
+    <div class="cta-strip">
+      <div class="container">
+        <h3>${c.ctaText}</h3>
+        <button class="btn-primary" onclick="showSection('contact')">${c.ctaBtn}</button>
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+// ===== BUILD ABOUT =====
+function buildAbout() {
+  const c = CONTENT.about;
+  const pills = c.values.map(v => `<div class="value-pill">${v}</div>`).join('');
+  document.getElementById('section-about').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>${c.title}</strong></h2>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container">
+        <div class="two-col">
+          <div class="key-numbers">
+            <div class="key-number"><div class="num">2016</div><div class="lbl">${c.founded}</div></div>
+            <div class="key-number"><div class="num">769</div><div class="lbl">${c.regulated}</div></div>
+            <div class="key-number"><div class="num">Γ£ף</div><div class="lbl">${c.personal}</div></div>
+          </div>
+          <div class="text-col">
+            <h3>${c.title}</h3>
+            <p>${c.p1}</p>
+            <p>${c.p2}</p>
+            <p>${c.p3}</p>
+            <span class="license-tag" style="margin-top:16px;">${c.license}</span>
+          </div>
+        </div>
+        <div class="values-strip">${pills}</div>
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+// ===== BUILD CONTACT =====
+function buildContact() {
+  const c = CONTENT.contact;
+  document.getElementById('section-contact').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>${c.title}</strong></h2>
+        <p>${c.subtitle}</p>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container contact-layout">
+        <div class="contact-card">
+          <h3>${c.contactName}</h3>
+          <div class="role">${c.contactRole}</div>
+          <div class="cline">≡ƒף₧ <a href="tel:${c.contactPhone}">${c.contactPhone}</a></div>
+          <div class="cline">Γ£י <a href="mailto:${c.contactEmail}">${c.contactEmail}</a></div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="handleForm(event)">
+            <div class="field">
+              <label>${c.formName}</label>
+              <input type="text" required placeholder="${c.formName}">
+            </div>
+            <div class="field">
+              <label>${c.formPhone}</label>
+              <input type="tel" required placeholder="${c.formPhone}">
+            </div>
+            <div class="field">
+              <label>${c.formMessage}</label>
+              <textarea required placeholder="${c.formMessage}"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">${c.formBtn}</button>
+            <div class="form-success" id="formSuccess">${c.formSuccess}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+function handleForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.opacity = '0.5';
+  document.getElementById('contactForm').style.pointerEvents = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// ===== INIT =====
+buildNavbar();
+buildHome();
+buildFunds();
+buildPortfolio();
+buildAbout();
+buildContact();
+
+// Handle direct URL hash
+const hash = window.location.hash.replace('#', '');
+if (hash && CONTENT.nav.map(n => n.id).includes(hash)) showSection(hash);
+</script>
+</body>
+</html>
