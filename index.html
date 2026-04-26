@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>סלע בית השקעות</title>
+<title>סלע בית השקעות מבית SPHERA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -97,12 +97,19 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo { color: var(--white); font-size: 18px; font-weight: 700; cursor: pointer; white-space: nowrap; }
-.nav-logo span { font-weight: 300; font-size: 14px; opacity: 0.85; margin-right: 4px; }
-.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-logo {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-logo span { font-weight: 400; font-size: 13px; opacity: 0.8; margin-right: 3px; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
 .nav-links a {
   color: rgba(255,255,255,0.8);
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   cursor: pointer;
   padding-bottom: 2px;
@@ -117,7 +124,7 @@ body {
 .nav-cta {
   background: var(--white);
   color: var(--navy);
-  padding: 9px 22px;
+  padding: 9px 20px;
   border-radius: 4px;
   font-size: 13px;
   font-weight: 700;
@@ -125,6 +132,7 @@ body {
   border: none;
   font-family: 'Rubik', sans-serif;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav-cta:hover { background: #e8edf5; }
 .nav-hamburger {
@@ -147,7 +155,7 @@ body {
 /* ===== HERO ===== */
 .hero {
   background: var(--white);
-  padding: 80px 0;
+  padding: 80px 0 60px;
   text-align: center;
   border-bottom: 1px solid var(--gray-border);
 }
@@ -169,12 +177,41 @@ body {
 .hero-title strong { font-weight: 700; }
 .hero-body {
   color: var(--gray-text);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.85;
   margin-bottom: 36px;
-  max-width: 560px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
+}
+.hero-bullets {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto 40px;
+  max-width: 900px;
+  flex-wrap: wrap;
+}
+.hero-bullet {
+  flex: 1;
+  min-width: 220px;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  text-align: right;
+}
+.hero-bullet h4 {
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.hero-bullet p {
+  color: var(--gray-text);
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0;
 }
 .hero-buttons { display: flex; gap: 16px; justify-content: center; }
 
@@ -233,7 +270,7 @@ body {
   text-align: center;
   color: var(--white);
 }
-.page-hero h2 { font-size: 36px; font-weight: 300; margin-bottom: 10px; }
+.page-hero h2 { font-size: 32px; font-weight: 300; margin-bottom: 10px; }
 .page-hero h2 strong { font-weight: 700; }
 .page-hero p { font-size: 15px; opacity: 0.75; margin-top: 8px; }
 
@@ -245,8 +282,21 @@ body {
 .two-col h3 { color: var(--navy); font-size: 22px; font-weight: 600; margin-bottom: 20px; }
 .two-col p { color: var(--gray-text); font-size: 15px; line-height: 1.85; margin-bottom: 16px; }
 
-/* ===== BENEFIT CARDS 2x2 ===== */
-.benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+/* ===== APPROACH ITEMS ===== */
+.approach-item { margin-bottom: 28px; }
+.approach-item:last-child { margin-bottom: 0; }
+.approach-item strong {
+  display: block;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.approach-item p { color: var(--gray-text); font-size: 14px; line-height: 1.8; margin: 0; }
+
+/* ===== BENEFIT CARDS ===== */
+.benefit-grid   { display: grid; grid-template-columns: 1fr 1fr;       gap: 20px; }
+.benefit-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr;   gap: 20px; }
 .benefit-card {
   background: var(--white);
   border: 1px solid var(--gray-border);
@@ -258,34 +308,161 @@ body {
 .benefit-card h4 { color: var(--navy); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
 .benefit-card p { color: var(--gray-text); font-size: 13px; line-height: 1.7; margin: 0; }
 
-/* ===== CONTACT STRIP (funds page) ===== */
-.contact-strip {
-  background: var(--navy);
-  padding: 52px 0;
-  text-align: center;
-  color: var(--white);
-}
-.contact-strip p { opacity: 0.8; font-size: 15px; margin-bottom: 28px; }
-.contact-info { display: flex; gap: 48px; justify-content: center; align-items: center; flex-wrap: wrap; }
-.contact-detail { font-size: 15px; }
-.contact-detail strong { display: block; font-size: 18px; margin-bottom: 4px; }
-.contact-detail a { color: rgba(255,255,255,0.85); text-decoration: none; }
-.contact-detail a:hover { color: var(--white); text-decoration: underline; }
-
 /* ===== CTA STRIP ===== */
-.cta-strip { background: var(--gray-light); padding: 64px 0; text-align: center; }
-.cta-strip h3 { color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 28px; }
+.cta-strip { background: var(--navy); padding: 64px 0; text-align: center; color: var(--white); }
+.cta-strip h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
+.cta-strip p {
+  font-size: 15px; opacity: 0.8; margin-bottom: 32px;
+  max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+/* ===== CEO QUOTE ===== */
+.ceo-section { background: var(--gray-light); padding: 72px 0; }
+.ceo-inner {
+  display: flex;
+  gap: 52px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.ceo-photo-wrap { flex-shrink: 0; }
+.ceo-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--navy);
+}
+.ceo-quote-body { flex: 1; }
+.ceo-label {
+  color: var(--navy);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+.ceo-quote-text {
+  color: var(--navy);
+  font-size: 16px;
+  line-height: 1.9;
+  font-style: italic;
+  margin-bottom: 24px;
+  border-right: 3px solid var(--navy);
+  padding-right: 20px;
+}
+.ceo-signoff { color: var(--gray-text); font-size: 14px; margin-bottom: 4px; }
+.ceo-name { color: var(--navy); font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+.ceo-role { color: var(--gray-text); font-size: 13px; margin-bottom: 6px; }
+.ceo-phone a { color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; }
+.ceo-phone a:hover { text-decoration: underline; }
+
+/* ===== FORM SECTION ===== */
+.form-field { margin-bottom: 16px; }
+.form-field label {
+  display: block;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: 6px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: var(--white);
+  direction: rtl;
+  transition: border-color 0.2s;
+}
+.form-field input:focus,
+.form-field textarea:focus { outline: none; border-color: var(--navy); }
+.form-field textarea { height: 90px; resize: vertical; }
+.form-success {
+  display: none;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 14px;
+  border: 1px solid #a5d6a7;
+}
+
+/* ===== FORMS GRID (funds) ===== */
+.forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.form-box {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: 12px;
+  padding: 36px 32px;
+  box-shadow: 0 2px 8px rgba(27,58,107,0.05);
+}
+.form-box h3 { color: var(--navy); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.form-box p { color: var(--gray-text); font-size: 13px; line-height: 1.7; margin-bottom: 24px; }
+
+/* ===== MANAGEMENT TEAM ===== */
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,58,107,0.06);
+}
+.team-card-header {
+  background: var(--navy);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.team-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.4);
+  flex-shrink: 0;
+}
+.team-initials {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.team-card-name { color: var(--white); font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.team-card-role { color: rgba(255,255,255,0.75); font-size: 13px; }
+.team-card-bio {
+  padding: 24px 28px;
+  color: var(--gray-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
 
 /* ===== ABOUT PAGE ===== */
-.values-strip { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 48px; }
-.value-pill {
+.methodology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.method-card {
   background: var(--navy);
   color: var(--white);
-  padding: 10px 32px;
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: 10px;
+  padding: 28px 24px;
 }
+.method-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.method-card p { font-size: 13px; opacity: 0.82; line-height: 1.7; margin: 0; }
 .key-numbers { display: flex; flex-direction: column; gap: 20px; min-width: 190px; }
 .key-number {
   background: var(--navy);
@@ -311,49 +488,27 @@ body {
 .contact-card .cline { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-size: 15px; }
 .contact-card a { color: rgba(255,255,255,0.85); text-decoration: none; }
 .contact-card a:hover { color: var(--white); text-decoration: underline; }
-.contact-form { flex: 1; }
-.contact-form .field { margin-bottom: 20px; }
-.contact-form label { display: block; color: var(--navy); font-size: 13px; font-weight: 600; margin-bottom: 6px; }
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid var(--gray-border);
-  border-radius: 6px;
-  font-family: 'Rubik', sans-serif;
-  font-size: 14px;
-  color: #333;
-  background: var(--white);
-  direction: rtl;
-  transition: border-color 0.2s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus { outline: none; border-color: var(--navy); }
-.contact-form textarea { height: 130px; resize: vertical; }
-.form-success {
-  display: none;
-  background: #e8f5e9;
-  color: #2e7d32;
-  padding: 16px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  margin-top: 16px;
-  border: 1px solid #a5d6a7;
-}
+.contact-form-wrap { flex: 1; }
 
 /* ===== FOOTER ===== */
 .site-footer { background: var(--navy-dark); color: var(--white); }
 .footer-main {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
-  padding: 48px 0 40px;
+  padding: 40px 0 36px;
 }
-.footer-logo-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-.footer-logo-name span { font-weight: 300; font-size: 14px; }
-.footer-legal { color: rgba(255,255,255,0.45); font-size: 11px; max-width: 240px; line-height: 1.65; margin-top: 8px; }
-.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-logo-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.footer-logo-name span { font-weight: 400; font-size: 13px; opacity: 0.75; }
+.footer-legal { color: rgba(255,255,255,0.4); font-size: 11px; max-width: 280px; line-height: 1.65; margin-top: 6px; }
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: flex-end;
+}
 .footer-links a {
   color: rgba(255,255,255,0.6);
   font-size: 13px;
@@ -364,30 +519,49 @@ body {
 .footer-links a:hover { color: var(--white); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 16px 0;
+  padding: 14px 0;
   text-align: center;
   color: rgba(255,255,255,0.35);
   font-size: 12px;
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 12px; }
+}
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
-  .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: var(--nav-height); right: 0; left: 0; background: var(--navy-dark); padding: 12px 0; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: var(--nav-height);
+    right: 0; left: 0;
+    background: var(--navy-dark);
+    padding: 12px 0;
+    z-index: 99;
+  }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 24px; border-bottom: none !important; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .hero-title { font-size: 28px; }
   .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-bullets { flex-direction: column; }
   .service-cards { flex-direction: column; }
-  .benefit-grid { grid-template-columns: 1fr; }
+  .benefit-grid, .benefit-grid-3 { grid-template-columns: 1fr; }
+  .forms-grid { grid-template-columns: 1fr; }
   .two-col { flex-direction: column; }
   .key-numbers { flex-direction: row; flex-wrap: wrap; min-width: unset; }
   .contact-layout { flex-direction: column; }
   .contact-card { min-width: unset; width: 100%; }
-  .contact-info { flex-direction: column; gap: 20px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .methodology-grid { grid-template-columns: 1fr; }
   .footer-main { flex-direction: column; gap: 24px; }
+  .footer-links { justify-content: flex-start; }
+  .ceo-inner { flex-direction: column; }
 }
 </style>
 </head>
@@ -395,11 +569,13 @@ body {
 
 <nav id="navbar"></nav>
 
-<div id="section-home"      class="section active"></div>
-<div id="section-funds"     class="section"></div>
-<div id="section-portfolio" class="section"></div>
-<div id="section-about"     class="section"></div>
-<div id="section-contact"   class="section"></div>
+<div id="section-home"       class="section active"></div>
+<div id="section-funds"      class="section"></div>
+<div id="section-portfolio"  class="section"></div>
+<div id="section-qualified"  class="section"></div>
+<div id="section-management" class="section"></div>
+<div id="section-about"      class="section"></div>
+<div id="section-contact"    class="section"></div>
 
 <script>
 // ============================================================
@@ -407,109 +583,203 @@ body {
 // ============================================================
 const CONTENT = {
   site: {
-    name: 'סלע',
-    tagline: 'בית השקעות',
-    legal: 'האתר אינו מהווה המלצה לרכישה או מכירה של ניירות ערך. ההשקעה כרוכה בסיכון.',
-    copyright: '© 2026 סלע בית השקעות. כל הזכויות שמורות.',
+    name:      'סלע בית השקעות',
+    tagline:   'מבית SPHERA',
+    legal:     'האתר אינו מהווה המלצה לרכישה או מכירה של ניירות ערך. ההשקעה כרוכה בסיכון.',
+    copyright: '© 2026 סלע בית השקעות מבית SPHERA. כל הזכויות שמורות.',
   },
   nav: [
-    { id: 'home',      label: 'ראשי' },
-    { id: 'funds',     label: 'קרנות נאמנות' },
-    { id: 'portfolio', label: 'ניהול תיקים' },
-    { id: 'about',     label: 'אודות' },
-    { id: 'contact',   label: 'צור קשר' },
+    { id: 'home',       label: 'ראשי' },
+    { id: 'funds',      label: 'קרנות נאמנות' },
+    { id: 'portfolio',  label: 'ניהול תיקים' },
+    { id: 'qualified',  label: 'לקוחות כשירים' },
+    { id: 'management', label: 'הנהלת החברה' },
+    { id: 'about',      label: 'אודות' },
+    { id: 'contact',    label: 'צור קשר' },
   ],
+
+  /* ====== HOME ====== */
   home: {
-    heroLabel: 'SELA INVESTMENT HOUSE',
-    heroTitle: 'ניהול עושר מקצועי',
-    heroTitleStrong: 'בגישה אישית',
-    heroBody: 'קרנות נאמנות וניהול תיקים המותאמים לצרכים שלך, עם ניסיון של שנים בשווקי ההון הישראלי והעולמי.',
-    heroBtnFunds: 'קרנות נאמנות',
+    heroLabel:        'סלע, הבית שלך להשקעות',
+    heroTitle:        'ניהול השקעות בסטנדרט גלובלי.',
+    heroTitleStrong:  'אצלכם בחשבון',
+    heroBody:         'סלע בית השקעות מחברת בין תשתיות המחקר של קבוצת Sphera לניהול ההשקעות המסורתי והמוכר בחשבונות הבנק של הלקוח. אנו מציעים סטנדרט חדש של ניהול השקעות — סלע של יציבות וצמיחה עבור ההון שלכם. ניהול דינמי הממוקד בזיהוי הזדמנויות ערך יוצאות דופן בשוק הישראלי ומעבר לים.',
+    heroBullets: [
+      { title: 'חשיבה מחוץ לקופסא',  desc: 'ניהול השקעות הנשען על חשיבה מחוץ לקופסה ושימוש באסטרטגיות ניהול מתקדמות' },
+      { title: 'הניהול של סלע',        desc: 'אסטרטגיה אקטיבית השואפת לייצר אלפא דרך זיהוי הזדמנויות בארץ ובעולם' },
+      { title: 'הביטחון שלכם',          desc: 'ניהול תיק ההשקעות ישירות בחשבון הבנק האישי, בשקיפות ובנזילות מלאה' },
+    ],
+    heroBtnFunds:     'קרנות נאמנות',
     heroBtnPortfolio: 'ניהול תיקים',
-    aboutLabel: 'אודות החברה',
-    aboutTitle: 'סלע בית השקעות',
-    aboutP1: 'סלע בית השקעות הוקמה בשנת 2016 והינה חברה המתעסקת בניהול תיקי השקעות ללקוחות פרטיים וחברות ובניהול השקעות של קרנות נאמנות. החברה מספקת ללקוחותיה ניהול תיקי השקעות באפיקים שונים ומגוונים.',
-    aboutP2: 'החברה ממוקדת בצרכיו האישיים של הלקוח ומספקת מגוון רחב של מוצרים בתחום ניהול תיקי השקעות שמאפשרים להגיע ליעילות אופטימלית על ידי שיתוף פעולה עם חדרי עסקאות של הבנקים הגדולים בארץ ובחו"ל. החברה מאמינה ברמת מקצועיות ואמינות גבוהה, זמינות בכל עת ומתן מענה מהיר בהתאם לדרישת הלקוח.',
-    aboutP3: 'סלע בית השקעות פועלת על-פי מספר רישיון 769, לפי חוק הסדרת העיסוק בייעוץ השקעות בשיווק השקעות ובניהול תיקי השקעות, התשנ"ה-1995. החברה מנהלת תיקי השקעות במגוון רחב של תחומים ופעילה בתחום ניירות הערך לרבות: מניות בארץ ובחו"ל, אגרות חוב ממשלתיות ואגרות חוב של חברות, אגרות חוב בשווקים שונים בעולם.',
+    aboutLabel:   'אודות החברה',
+    aboutTitle:   'סלע בית השקעות',
+    aboutP1:      'סלע בית השקעות פועלת ומחזיקה ברישיון לניהול תיקי השקעות (מס\' 769) מטעם הרשות לניירות ערך. מאז הקמתה בשנת 2016, החברה מתמחה בניהול הון עבור לקוחות פרטיים וחברות, תוך הקפדה על הסטנדרטים המקצועיים הגבוהים ביותר.',
+    aboutP2:      'באמצעות החיבור לחלוצת קרנות הגידור בישראל, סלע מעניקה ללקוחותיה יתרון ייחודי — שילוב בין תשתית מחקרית גלובלית עמוקה לבין ניהול השקעות אישי ומסורתי. אנו פועלים בשיתוף פעולה הדוק עם חדרי העסקאות של הבנקים המובילים בארץ ובחו"ל, כדי להבטיח ביצועים אופטימליים ושקיפות מלאה.',
     aboutLicense: 'רישיון מס׳ 769 — רשות ניירות ערך',
     servicesLabel: 'הפתרונות שלנו',
     servicesTitle: 'כיצד נוכל לעזור לך?',
-    fundIcon: '📈',
-    fundTitle: 'קרנות נאמנות',
-    fundDesc: 'מכשיר השקעה המאפשר למשקיעים רבים להשקיע במשותף במגוון אפיקים — מניות, אגח, ותעודות סל — בניהול מקצועי ומפוקח.',
-    fundLink: 'למד עוד ←',
-    portfolioIcon: '💼',
+    fundIcon:       '📈',
+    fundTitle:      'קרנות נאמנות',
+    fundDesc:       'סלע מנהלת מגוון קרנות נאמנות באפיקי השקעה שונים, המיועדות להעניק למשקיעים פתרון מקצועי ונגיש בשוק ההון. הקרנות מנוהלות באופן דינמי תוך הקפדה על ניהול סיכונים קפדני, אנליזה מעמיקה ובחינה מתמדת של תנאי השוק.',
+    fundLink:       'למד עוד ←',
+    portfolioIcon:  '💼',
     portfolioTitle: 'ניהול תיקים',
-    portfolioDesc: 'תיק השקעות אישי המותאם בדיוק לצרכים שלך — ליעדים, לטווח הזמן ולרמת הסיכון. ניהול שוטף ודיווח מלא.',
-    portfolioLink: 'למד עוד ←',
+    portfolioDesc:  'ניהול תיקי השקעות בסלע מתבצע בשקיפות מלאה ובנזילות מרבית. הכסף מנוהל בחשבון הבנק האישי של הלקוח, מכוח ייפוי כוח לביצוע פעולות בניירות ערך בלבד. מודל זה מאפשר לכם ליהנות מניהול מקצועי, דינמי ומתקדם.',
+    portfolioLink:  'למד עוד ←',
   },
+
+  /* ====== FUNDS ====== */
   funds: {
-    label: 'השקעות',
-    title: 'קרנות נאמנות',
-    whatTitle: 'מהי קרן נאמנות?',
-    whatP1: 'קרן נאמנות היא מכשיר השקעה בשוק ההון, המאפשר למספר רב של משקיעים להשקיע במשותף במגוון אפיקי השקעה ומכשירים פיננסיים, כגון מניות, איגרות חוב ממשלתיות, איגרות חוב קונצרניות ותעודות סל.',
-    whatP2: 'קרן נאמנות, לעומת השקעה ישירה בשוק ההון, מאפשרת גם למשקיע חסר ניסיון להשיג חשיפה רחבה למגוון פעילויות ונכסים בשוקי ההון בארץ ובחו"ל. החברה המנהלת את הקרן ואת השקעותיה היא חברה שרשות ניירות ערך אישרה אותה ומפקחת על פעילותה השוטפת.',
-    whatP3: 'קרן נאמנות היא למעשה חשבון ניירות ערך משותף, שמטרתו השקעה משותפת בניירות ערך והפקת רווחים משותפים מהחזקתם ומעסקאות בהם. מנהל הקרן מקבל החלטות לגבי אופן ניהול ההשקעות בקרן הנאמנות, ומטרתו להשיא רווחים באמצעות השקעה בשוק ההון.',
-    benefitsTitle: 'יתרונות ההשקעה בקרן נאמנות',
+    label:       'קרנות נאמנות',
+    title:       'סלע קרנות נאמנות',
+    titleStrong: 'ניהול השקעות אקטיבי וממוקד',
+    intro:       'סלע מנהלת מגוון קרנות נאמנות באפיקי השקעה שונים, המיועדות להעניק למשקיעים פתרון מקצועי ונגיש בשוק ההון. הקרנות מנוהלות באופן דינמי תוך הקפדה על ניהול סיכונים קפדני, אנליזה מעמיקה ובחינה מתמדת של תנאי השוק והחברות הפועלות בו.',
+    benefitsTitle: 'יתרונות הניהול בסלע',
     benefits: [
-      { icon: '🔀', title: 'פיזור רחב', desc: 'ההשקעה בקרן נאמנות מאופיינת בפיזור רחב המצמצם את הסיכון הכרוך בה וחושף את המשקיע למספר רב של ניירות ערך.' },
-      { icon: '🏛️', title: 'ניהול מקצועי', desc: 'ניהול קרן נאמנות מתבצע על ידי מנהלי השקעות מקצועיים בעלי רישיון לניהול השקעות מטעם הרשות לניירות ערך.' },
-      { icon: '💰', title: 'דחיית מס', desc: 'קרן נאמנות מאפשרת דחיית מס והשקעה חוזרת של קופונים ודיבידנדים והפיכת המשקיע ללקוח ברוטואיסט.' },
-      { icon: '👥', title: 'נגישות לכולם', desc: 'הקרן נותנת אפשרות למשקיעים קטנים כגדולים להיחשף להשקעה בה, בסכומים נמוכים יחסית.' },
+      { icon: '🏆', title: 'מקצוענות וניסיון',      desc: 'ניהול הקרנות מתבצע על ידי מנהלי השקעות בעלי ניסיון רב-שנים בזיהוי הזדמנויות ערך ובניית אסטרטגיות השקעה בשווקים בארץ ובעולם.' },
+      { icon: '⚡', title: 'ניהול אקטיבי',           desc: 'אנו דוגלים בניהול אקטיבי השואף למקסם את פוטנציאל ההשקעה בכל אפיק, תוך ביצוע התאמות שוטפות בהתאם לתנודות השוק.' },
+      { icon: '🔍', title: 'שקיפות ונזילות מירבית', desc: 'קרן נאמנות מאפשרת לכם ליהנות מניהול השקעות מקצועי עם אפשרות מימוש יומית ושקיפות מלאה לגבי הרכב הנכסים.' },
     ],
-    contactName: 'יובל אהרוני',
-    contactRole: 'שיווק בנקים',
-    contactPhone: '052-4794858',
-    contactEmail: 'yuvala@sela-inv.co.il',
-    contactCta: 'לפרטים נוספים על קרנות הנאמנות שלנו, צרו קשר:',
+    privateTitle: 'למשקיעים פרטיים',
+    privateCta:   'רוצים להבין איזו קרן מתאימה למטרות שלכם? השאירו טלפון או מייל, ואנחנו כבר נדאג לכל השאר. נחזור אליכם לשיחה קצרה עם כל המידע המקצועי שאתם צריכים.',
+    advisorTitle: 'ליועצי השקעות',
+    advisorCta:   'מעוניינים במידע מקצועי מעמיק, סקירות או פגישת עדכון לגבי מדיניות ההשקעה בקרנות? דברו איתנו. אנחנו כאן כדי לספק לכם את כל הכלים והנתונים שיעזרו לכם להעניק את השירות הטוב ביותר ללקוחותיכם.',
+    formNameLabel:  'שם מלא',
+    formPhoneLabel: 'טלפון',
+    formEmailLabel: 'דוא"ל',
+    formBtn:        'שלחו פרטים',
+    formSuccess:    'תודה! קיבלנו את פרטיכם ונחזור אליכם בהקדם.',
   },
+
+  /* ====== PORTFOLIO ====== */
   portfolio: {
-    label: 'ניהול תיקים',
-    title: 'ניהול תיקים',
-    subtitle: 'פתרון השקעה אישי המותאם לך',
-    whatTitle: 'מה זה ניהול תיקים?',
-    whatP1: 'מנהל תיקים מקצועי בונה ומנהל תיק השקעות אישי בהתאם ליעדים, לטווח הזמן ולרמת הסיכון של כל לקוח. בשונה מקרנות נאמנות, הניהול הוא אישי לחלוטין — התיק מותאם לצרכים הספציפיים שלך ולא לקהל משקיעים כללי.',
-    whatP2: 'סלע בית השקעות מנהלת תיקי השקעות תוך הקפדה על מדיניות השקעות ברורה, שקיפות מלאה ודיווח שוטף ללקוח. אנו עובדים בשיתוף פעולה עם חדרי עסקאות של הבנקים הגדולים בארץ ובחו"ל.',
-    benefitsTitle: 'יתרונות ניהול תיקים',
-    benefits: [
-      { icon: '🎯', title: 'התאמה אישית מלאה', desc: 'התיק מותאם בדיוק לצרכים, ליעדים ולרמת הסיכון שלך — לא פתרון גנרי.' },
-      { icon: '🔄', title: 'גמישות ושליטה', desc: 'ניתן לשנות את מדיניות ההשקעות בכל עת בהתאם לשינויים בצרכים האישיים או בשוק.' },
-      { icon: '📊', title: 'מעקב ודיווח שוטף', desc: 'דיווח שקוף ומלא על ביצועי התיק, הרכבו ושינויים שנעשו לאורך הזמן.' },
-      { icon: '🛡️', title: 'ניהול סיכונים דינמי', desc: 'התאמת חשיפת הסיכון של התיק בהתאם לשינויים בשוק ובמצב האישי של הלקוח.' },
+    label:       'ניהול תיקים',
+    title:       'ניהול תיקי השקעות',
+    titleStrong: 'SELA BY SPHERA',
+    subtitle:    'ניהול השקעות בסטנדרט גלובלי, בחשבון הבנק שלך',
+    intro:       'ניהול תיקי השקעות בסלע מתבצע בשקיפות מלאה ובנזילות מרבית. הכסף מנוהל בחשבון הבנק האישי של הלקוח, כאשר החברה פועלת מכוח ייפוי כוח לביצוע פעולות בניירות ערך בלבד. מודל זה מאפשר לכם ליהנות מניהול מקצועי, דינמי ומתקדם, תוך שמירה על שליטה וחופש פעולה.',
+    approaches: [
+      { title: 'מחקר',                    desc: 'התיק שלכם נהנה מהעוצמה, הניסיון המצטבר ומהאנליזה של אחת מקבוצות ההשקעה המובילות בישראל — המתורגמות להחלטות השקעה מושכלות ומדויקות בתיק האישי שלכם.' },
+      { title: 'קשר אישי',                desc: 'בסלע אנחנו מחזירים את הלקוח למרכז. אנחנו מאמינים שניהול השקעות מתחיל בהקשבה, בהכרת הלקוח ובקשר בגובה העיניים. עבורנו, אתם שותפים לדרך. לכן, אנו פועלים בסנכרון מלא איתכם מתוך הבנה שניהול אחראי חייב להתאים לצרכים ולתוכניות שלכם. בסלע, אתם נהנים מליווי מקצועי צמוד ונגישות מלאה להנהלת החברה.' },
+      { title: 'אסטרטגיה מותאמת אישית', desc: 'אנו דבקים במדיניות השקעה ברורה העונה על הצרכים הייחודיים שלכם. תמהיל ההשקעות נבנה תוך התחשבות קפדנית בטווח ההשקעה, מטרות הלקוח, מצבו הפיננסי ורמת הסיכון המוגדרת, תוך בחינה מתמדת של תנאי השוק המשתנים.' },
     ],
-    ctaText: 'מעוניין לשמוע עוד? נשמח לשוחח',
-    ctaBtn: 'צור קשר',
+    benefitsTitle: 'יתרונות',
+    benefits: [
+      { icon: '🛡️', title: 'שקיפות וביטחון',    desc: 'הכסף נשאר בחשבון הבנק שלכם, עם יכולת מעקב שוטף וקבלת דיווחים תקופתיים בהתאם לתקנות הרשות לניירות ערך.' },
+      { icon: '📊', title: 'פיזור נכסים רחב',    desc: 'שילוב בין ניהול אקטיבי ופסיבי של מניות ואגרות חוב בשווקים המובילים בארץ ובחו"ל.' },
+      { icon: '📞', title: 'זמינות ומענה מהיר',   desc: 'ליווי מקצועי צמוד תוך דגש על שירות אישי ומשפחתי.' },
+      { icon: '⭐', title: 'מקצוענות ללא פשרות', desc: 'שילוב בין ניסיון רב שנים לבין יכולות אנליטיות גלובליות פורצות דרך.' },
+    ],
+    ctaHeader:   'רוצים לשמוע יותר על המודל שלנו?',
+    ctaText:     'תשאירו טלפון ואנחנו כבר נדאג לכל השאר. נבחן יחד איך לחבר את התיק שלכם לסטנדרט הניהול של סלע.',
+    ctaBtn:      'דברו איתנו',
+    ceoSection:  'דבר המנכ"ל',
+    ceoQuote:    'אחרי שנים ארוכות בשוק ההון, אני מאמין שניהול השקעות מוצלח נמדד ביכולת לייצר יציבות לאורך זמן מבלי לוותר על זיהוי הזדמנויות ערך. בסלע בחרנו לחבר בין מקצוענות חסרת פשרות לבין שירות אישי וממוקד. המטרה שלנו היא להיות עבורכם "סלע" של ביטחון מקצועי בעולם פיננסי משתנה — ולהבטיח שההון שלכם ינוהל בסטנדרטים הגבוהים ביותר ולא פחות חשוב, שתרגישו בבית.',
+    ceoName:     'דודי בראל',
+    ceoRole:     'מנכ"ל משותף, סלע בית השקעות',
+    ceoPhone:    '050-4012436',
+    ceoSignoff:  'תמיד כאן,',
+    formNameLabel:  'שם מלא',
+    formPhoneLabel: 'טלפון',
+    formEmailLabel: 'דוא"ל',
+    formBtn:        'דברו איתנו',
+    formSuccess:    'תודה! קיבלנו את פרטיכם ונחזור אליכם בהקדם.',
   },
+
+  /* ====== QUALIFIED ====== */
+  qualified: {
+    label:   'לקוחות כשירים',
+    title:   'ניהול תיקים ללקוחות כשירים',
+    p1:      'ניהול הון ללקוחות כשירים בסלע משלב מומחיות מקצועית רחבה עם כלים פיננסיים מתקדמים. אנו בונים פתרונות השקעה מורכבים המותאמים אישית לצרכים ארוכי הטווח של בעלי הון, בדגש על ניהול סיכונים קפדני וזיהוי הזדמנויות ערך בשווקים הגלובליים.',
+    p2:      'התיק נבנה מתוך שאיפה לייצר פוטנציאל לתשואה מותאמת סיכון גם בסביבות שוק משתנות, תוך שילוב נכסים ומכשירים פיננסיים שאינם נגישים בניהול התיקים הסטנדרטי. ניהול התיק מתבצע באופן אקטיבי ונשען על אנליזה פונדמנטלית מעמיקה, המאפשרת חשיפה לאפיקי השקעה ייחודיים וממוקדים.',
+    ctaText: 'מעוניינים במידע נוסף על המודל שלנו ללקוחות כשירים? תשאירו פרטים לשיחה ראשונית, ואנחנו כבר נדאג לכל השאר.',
+    formNameLabel:  'שם מלא',
+    formPhoneLabel: 'טלפון',
+    formEmailLabel: 'דוא"ל',
+    formBtn:        'שלחו פרטים',
+    formSuccess:    'תודה! קיבלנו את פרטיכם ונחזור אליכם בהקדם.',
+  },
+
+  /* ====== MANAGEMENT ====== */
+  management: {
+    label: 'הנהלת החברה',
+    title: 'הנהלת החברה',
+    team: [
+      {
+        name:     'דודי קטש',
+        role:     'מייסד, מנכ"ל משותף ומנהל השקעות ראשי',
+        bio:      'דודי בעל ניסיון של מעל 20 שנה בשוק ההון בתפקידי ניהול השקעות בכירים. בעבר כיהן כמנכ"ל ומנהל השקעות ראשי בתמיר פישמן קרנות נאמנות, סמנכ"ל השקעות בדש ומנכ"ל איפקס קרנות נאמנות. דודי מתווה את אסטרטגיית ההשקעות של החברה מיום הקמתה, תוך דגש על ניהול סיכונים קפדני וסטנדרט מקצועי בלתי מתפשר.',
+        hasPhoto: false,
+      },
+      {
+        name:     'דודי בראל',
+        role:     'מנכ"ל משותף',
+        bio:      'עם ניסיון של כ-17 שנים בתפקידים שונים בשוק ההון, דודי מאמין בניהול בגובה העיניים ורואה בזמינות ונגישות אישית לכל לקוח ערך עליון בבניית שותפות ארוכת טווח. בתפקידו האחרון כיהן במשך כ-14 שנה כמנהל דסק החברות והתאגידים הציבוריים בבית ההשקעות ילין לפידות. דודי מביא עמו מומחיות בליווי תהליכי קבלת החלטות וניתוח שווקים וניסיון רב בליווי לקוחות אסטרטגיים, בעלי שליטה וחברות פרטיות וציבוריות.',
+        hasPhoto: true,
+      },
+      {
+        name:     'אורן דגן',
+        role:     'שותף מנהל',
+        bio:      'אורן מביא עמו ניסיון עשיר ורב-שנים בשוק ההון בניהול מערכי השקעות וקשרי לקוחות. כשותף מנהל בסלע, אורן אמון על פיתוח המודלים העסקיים של החברה ועל הובלת אסטרטגיית הצמיחה, תוך הקפדה על הערכים המרכזיים של הבית: מקצוענות ללא פשרות, שקיפות מלאה וליווי אישי וקרוב לכל משקיע.',
+        hasPhoto: false,
+      },
+      {
+        name:     'אופיר סרדם',
+        role:     'סמנכ"ל לקוחות פרימיום ואסטרטגיה',
+        bio:      'לאופיר ניסיון של כ-20 שנה בייעוץ השקעות, ניהול סיכונים והדרכה בשוק ההון. בעברו כיהן בתפקידי מפתח בבנק הפועלים, ביניהם מנהל יחידת הייעוץ הפיננסי ומנהל אינטגרציית הסיכונים של הבנק. לצד עבודתו בסלע, אופיר מרצה למעלה מעשור בתכנית ה-MBA של האוניברסיטה העברית בנושאי אסטרטגיות השקעה ונגזרים. הוא בעל תארים בכלכלה, משפטים ותקשורת פוליטית.',
+        hasPhoto: false,
+      },
+      {
+        name:     'עומר דגני',
+        role:     'יו"ר הדירקטוריון',
+        bio:      'עומר כיהן במשך 19 שנים כראש מחלקת מכירות ושיווק בבית ההשקעות ילין לפידות, שם היה גם חבר בכיר בצוות ההנהלה והקים את מחלקת המכירות ללקוחות פרטיים ולסוכנים. עומר בעל תואר ראשון בכלכלה עם התמחות במימון ממכללת עמק יזרעאל.',
+        hasPhoto: false,
+      },
+    ],
+  },
+
+  /* ====== ABOUT ====== */
   about: {
     label: 'אודות',
-    title: 'אודות סלע',
-    p1: 'סלע בית השקעות הוקמה בשנת 2016 מתוך אמונה שכל לקוח ראוי לניהול עושר מקצועי ואישי. אנו מתמחים בניהול תיקי השקעות לפרטיים, חברות ומוסדות, ובניהול קרנות נאמנות.',
-    p2: 'הגישה שלנו ממוקדת בלקוח: אנו מקדישים זמן להבין את הצרכים, היעדים ורמת הסיכון של כל לקוח לפני בניית אסטרטגיית ההשקעה. אנו עובדים בשקיפות מלאה ומספקים מענה מהיר בכל עת.',
-    p3: 'החברה פועלת בפיקוח רשות ניירות ערך תחת רישיון מס׳ 769 לפי חוק הסדרת העיסוק בייעוץ השקעות. אנו מאמינים שרגולציה ואמינות הם הבסיס לאמון הלקוחות.',
-    license: 'רישיון מס׳ 769 — רשות ניירות ערך',
-    values: ['מקצועיות', 'אמינות', 'גישה אישית'],
-    founded: 'הוקמה 2016',
+    title: 'סלע — ניסיון מוכח, גישת השקעות חדשנית ומתקדמת, מחויבות אישית',
+    p1:    'סלע בית השקעות פועלת ומחזיקה ברישיון לניהול תיקי השקעות (מס\' 769) מטעם הרשות לניירות ערך. מאז הקמתה בשנת 2016, החברה מתמחה בניהול הון עבור לקוחות פרטיים וחברות, תוך הקפדה על הסטנדרטים המקצועיים הגבוהים ביותר.',
+    p2:    'באמצעות החיבור לחלוצת קרנות הגידור בישראל, סלע מעניקה ללקוחותיה יתרון ייחודי — שילוב בין תשתית מחקרית גלובלית עמוקה לבין ניהול השקעות אישי ומסורתי. אנו פועלים בשיתוף פעולה הדוק עם חדרי העסקאות של הבנקים המובילים בארץ ובחו"ל, כדי להבטיח ביצועים אופטימליים ושקיפות מלאה.',
+    methodologyTitle: 'מתודולוגיית השקעות',
+    methodology: [
+      { title: 'סינרגיה',              desc: 'הידע המצטבר ותשתיות המחקר של אחד מגופי ההשקעה המובילים והוותיקים בישראל, מסייעים בתהליכי קבלת החלטות ההשקעה שלנו.' },
+      { title: 'אנליזה',               desc: 'מחקר Bottom-up מעמיק הבוחן כל מניה או אגרת חוב לפני השקעה.' },
+      { title: 'מודל שירות ואמון',     desc: 'אנו מאמינים כי המדד הטוב ביותר להצלחה הוא שביעות הרצון שלכם. ניהול התיק אך ורק בחשבון הבנק מאפשר ללקוחות גמישות ושקיפות מלאה.' },
+      { title: 'מקצוענות ללא פשרות',  desc: 'צוות שחי את השווקים בארץ ובעולם 24/7.' },
+    ],
+    license:   'רישיון מס׳ 769 — רשות ניירות ערך',
+    founded:   'הוקמה 2016',
     regulated: 'פיקוח מלא',
-    personal: 'ניהול אישי',
+    personal:  'ניהול אישי',
   },
+
+  /* ====== CONTACT ====== */
   contact: {
-    label: 'צור קשר',
-    title: 'נשמח לשמוע ממך',
-    subtitle: 'צוות סלע זמין לענות על כל שאלה',
-    contactName: 'יובל אהרוני',
-    contactRole: 'שיווק בנקים',
-    contactPhone: '052-4794858',
-    contactEmail: 'yuvala@sela-inv.co.il',
-    formName: 'שם מלא',
-    formPhone: 'טלפון',
-    formMessage: 'הודעה',
-    formBtn: 'שלח הודעה',
-    formSuccess: 'תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.',
+    label:            'צור קשר',
+    title:            'נשמח לשמוע ממך',
+    subtitle:         'צוות סלע זמין לענות על כל שאלה',
+    contactName:      'יובל אהרוני',
+    contactRole:      'שיווק בנקים',
+    contactPhone:     '052-4794858',
+    contactEmail:     'yuvala@sela-inv.co.il',
+    formNameLabel:    'שם מלא',
+    formPhoneLabel:   'טלפון',
+    formEmailLabel:   'דוא"ל',
+    formMessageLabel: 'הודעה',
+    formBtn:          'שלח הודעה',
+    formSuccess:      'תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.',
   },
 };
 // ============================================================
 // END CONTENT
 // ============================================================
+
+// ===== PHOTO (דודי בראל) =====
+const DUDI_PHOTO = 'data:image/jpeg;base64,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';
 
 // ===== NAVIGATION =====
 function showSection(id) {
@@ -520,7 +790,6 @@ function showSection(id) {
   });
   window.location.hash = id;
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  // close mobile menu
   document.getElementById('navLinks').classList.remove('open');
 }
 
@@ -528,7 +797,7 @@ function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('open');
 }
 
-// ===== FOOTER HTML =====
+// ===== FOOTER =====
 function buildFooterHTML() {
   const s = CONTENT.site;
   const links = CONTENT.nav.map(n =>
@@ -551,16 +820,51 @@ function buildFooterHTML() {
     </div>`;
 }
 
+// ===== FORM BUILDER =====
+let _fc = 0;
+function buildFormHTML(content, withMessage) {
+  const fid = 'form' + (++_fc);
+  const sid = 'succ' + _fc;
+  const msgField = withMessage
+    ? `<div class="form-field"><label>${content.formMessageLabel}</label><textarea placeholder="${content.formMessageLabel}"></textarea></div>`
+    : '';
+  return `
+    <form id="${fid}" onsubmit="handleForm(event,'${fid}','${sid}')">
+      <div class="form-field">
+        <label>${content.formNameLabel}</label>
+        <input type="text" required placeholder="${content.formNameLabel}">
+      </div>
+      <div class="form-field">
+        <label>${content.formPhoneLabel}</label>
+        <input type="tel" required placeholder="${content.formPhoneLabel}">
+      </div>
+      <div class="form-field">
+        <label>${content.formEmailLabel}</label>
+        <input type="email" placeholder="${content.formEmailLabel}">
+      </div>
+      ${msgField}
+      <button type="submit" class="btn-primary">${content.formBtn}</button>
+      <div class="form-success" id="${sid}">${content.formSuccess}</div>
+    </form>`;
+}
+
+function handleForm(e, fid, sid) {
+  e.preventDefault();
+  const f = document.getElementById(fid);
+  f.style.opacity = '0.5';
+  f.style.pointerEvents = 'none';
+  document.getElementById(sid).style.display = 'block';
+}
+
 // ===== BUILD NAVBAR =====
 function buildNavbar() {
-  const nav = document.getElementById('navbar');
   const links = CONTENT.nav.map(item =>
     `<a data-section="${item.id}" onclick="showSection('${item.id}')">${item.label}</a>`
   ).join('');
-  nav.innerHTML = `
+  document.getElementById('navbar').innerHTML = `
     <div class="container">
       <div class="nav-inner">
-        <button class="nav-cta" onclick="showSection('contact')">${CONTENT.nav[4].label}</button>
+        <button class="nav-cta" onclick="showSection('contact')">צור קשר</button>
         <ul class="nav-links" id="navLinks">${links}</ul>
         <div class="nav-logo" onclick="showSection('home')">
           ${CONTENT.site.name} <span>${CONTENT.site.tagline}</span>
@@ -570,18 +874,24 @@ function buildNavbar() {
         </button>
       </div>
     </div>`;
-  document.querySelector(`.nav-links a[data-section="home"]`).classList.add('active');
+  document.querySelector('.nav-links a[data-section="home"]').classList.add('active');
 }
 
 // ===== BUILD HOME =====
 function buildHome() {
   const c = CONTENT.home;
+  const bullets = c.heroBullets.map(b => `
+    <div class="hero-bullet">
+      <h4>${b.title}</h4>
+      <p>${b.desc}</p>
+    </div>`).join('');
   document.getElementById('section-home').innerHTML = `
     <div class="hero">
       <div class="container">
         <div class="hero-label">${c.heroLabel}</div>
         <h1 class="hero-title">${c.heroTitle} <strong>${c.heroTitleStrong}</strong></h1>
         <p class="hero-body">${c.heroBody}</p>
+        <div class="hero-bullets">${bullets}</div>
         <div class="hero-buttons">
           <button class="btn-primary" onclick="showSection('funds')">${c.heroBtnFunds}</button>
           <button class="btn-outline" onclick="showSection('portfolio')">${c.heroBtnPortfolio}</button>
@@ -595,7 +905,6 @@ function buildHome() {
         <div class="about-strip-text">
           <p>${c.aboutP1}</p>
           <p>${c.aboutP2}</p>
-          <p>${c.aboutP3}</p>
           <span class="license-tag">${c.aboutLicense}</span>
         </div>
       </div>
@@ -626,7 +935,7 @@ function buildHome() {
 // ===== BUILD FUNDS =====
 function buildFunds() {
   const c = CONTENT.funds;
-  const benefits = c.benefits.map(b => `
+  const bCards = c.benefits.map(b => `
     <div class="benefit-card">
       <div class="bicon">${b.icon}</div>
       <h4>${b.title}</h4>
@@ -635,41 +944,32 @@ function buildFunds() {
   document.getElementById('section-funds').innerHTML = `
     <div class="page-hero">
       <div class="container">
-        <h2><strong>${c.title}</strong></h2>
+        <h2>${c.title} — <strong>${c.titleStrong}</strong></h2>
       </div>
     </div>
     <div class="content-section">
       <div class="container">
-        <div class="two-col">
-          <div class="text-col">
-            <h3>${c.whatTitle}</h3>
-            <p>${c.whatP1}</p>
-            <p>${c.whatP2}</p>
-            <p>${c.whatP3}</p>
-          </div>
-        </div>
+        <p style="color:var(--gray-text);font-size:15px;line-height:1.85;max-width:780px;">${c.intro}</p>
       </div>
     </div>
     <div class="content-section gray">
       <div class="container">
-        <div class="section-label">${c.benefitsTitle}</div>
         <h2 class="section-h2">${c.benefitsTitle}</h2>
-        <div class="benefit-grid">${benefits}</div>
+        <div class="benefit-grid-3">${bCards}</div>
       </div>
     </div>
-    <div class="contact-strip">
+    <div class="content-section">
       <div class="container">
-        <p>${c.contactCta}</p>
-        <div class="contact-info">
-          <div class="contact-detail">
-            <strong>${c.contactName}</strong>
-            ${c.contactRole}
+        <div class="forms-grid">
+          <div class="form-box">
+            <h3>${c.privateTitle}</h3>
+            <p>${c.privateCta}</p>
+            ${buildFormHTML(c)}
           </div>
-          <div class="contact-detail">
-            <a href="tel:${c.contactPhone}">📞 ${c.contactPhone}</a>
-          </div>
-          <div class="contact-detail">
-            <a href="mailto:${c.contactEmail}">✉ ${c.contactEmail}</a>
+          <div class="form-box">
+            <h3>${c.advisorTitle}</h3>
+            <p>${c.advisorCta}</p>
+            ${buildFormHTML(c)}
           </div>
         </div>
       </div>
@@ -680,7 +980,12 @@ function buildFunds() {
 // ===== BUILD PORTFOLIO =====
 function buildPortfolio() {
   const c = CONTENT.portfolio;
-  const benefits = c.benefits.map(b => `
+  const approaches = c.approaches.map(a => `
+    <div class="approach-item">
+      <strong>${a.title}</strong>
+      <p>${a.desc}</p>
+    </div>`).join('');
+  const bCards = c.benefits.map(b => `
     <div class="benefit-card">
       <div class="bicon">${b.icon}</div>
       <h4>${b.title}</h4>
@@ -689,32 +994,108 @@ function buildPortfolio() {
   document.getElementById('section-portfolio').innerHTML = `
     <div class="page-hero">
       <div class="container">
-        <h2><strong>${c.title}</strong></h2>
+        <h2>${c.title} <strong>${c.titleStrong}</strong></h2>
         <p>${c.subtitle}</p>
       </div>
     </div>
     <div class="content-section">
-      <div class="container">
-        <div class="two-col">
-          <div class="text-col">
-            <h3>${c.whatTitle}</h3>
-            <p>${c.whatP1}</p>
-            <p>${c.whatP2}</p>
-          </div>
-        </div>
+      <div class="container" style="max-width:820px;">
+        <p style="color:var(--gray-text);font-size:15px;line-height:1.85;margin-bottom:32px;">${c.intro}</p>
+        ${approaches}
       </div>
     </div>
     <div class="content-section gray">
       <div class="container">
-        <div class="section-label">${c.benefitsTitle}</div>
         <h2 class="section-h2">${c.benefitsTitle}</h2>
-        <div class="benefit-grid">${benefits}</div>
+        <div class="benefit-grid">${bCards}</div>
       </div>
     </div>
     <div class="cta-strip">
       <div class="container">
-        <h3>${c.ctaText}</h3>
-        <button class="btn-primary" onclick="showSection('contact')">${c.ctaBtn}</button>
+        <h3>${c.ctaHeader}</h3>
+        <p>${c.ctaText}</p>
+        <button class="btn-primary" style="background:var(--white);color:var(--navy);font-weight:700;"
+          onclick="document.getElementById('portfolio-form').scrollIntoView({behavior:'smooth'})">${c.ctaBtn}</button>
+      </div>
+    </div>
+    <div class="ceo-section">
+      <div class="container">
+        <div class="ceo-inner">
+          <div class="ceo-photo-wrap">
+            <img class="ceo-photo" src="${DUDI_PHOTO}" alt="${c.ceoName}">
+          </div>
+          <div class="ceo-quote-body">
+            <div class="ceo-label">${c.ceoSection}</div>
+            <div class="ceo-quote-text">"${c.ceoQuote}"</div>
+            <div class="ceo-signoff">${c.ceoSignoff}</div>
+            <div class="ceo-name">${c.ceoName}</div>
+            <div class="ceo-role">${c.ceoRole}</div>
+            <div class="ceo-phone"><a href="tel:${c.ceoPhone}">${c.ceoPhone}</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-section" id="portfolio-form">
+      <div class="container" style="max-width:520px;">
+        <h2 class="section-h2" style="text-align:right;margin-bottom:28px;">${c.ctaBtn}</h2>
+        ${buildFormHTML(c)}
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+// ===== BUILD QUALIFIED =====
+function buildQualified() {
+  const c = CONTENT.qualified;
+  document.getElementById('section-qualified').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>${c.title}</strong></h2>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container" style="max-width:780px;">
+        <p style="color:var(--gray-text);font-size:15px;line-height:1.85;margin-bottom:20px;">${c.p1}</p>
+        <p style="color:var(--gray-text);font-size:15px;line-height:1.85;">${c.p2}</p>
+      </div>
+    </div>
+    <div class="content-section gray">
+      <div class="container" style="max-width:560px;">
+        <p style="color:var(--navy);font-size:16px;font-weight:600;margin-bottom:28px;">${c.ctaText}</p>
+        ${buildFormHTML(c)}
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
+// ===== BUILD MANAGEMENT =====
+function buildManagement() {
+  const c = CONTENT.management;
+  const cards = c.team.map(m => {
+    const photoEl = m.hasPhoto
+      ? `<img class="team-avatar" src="${DUDI_PHOTO}" alt="${m.name}">`
+      : `<div class="team-initials">${m.name.charAt(0)}</div>`;
+    return `
+    <div class="team-card">
+      <div class="team-card-header">
+        ${photoEl}
+        <div>
+          <div class="team-card-name">${m.name}</div>
+          <div class="team-card-role">${m.role}</div>
+        </div>
+      </div>
+      <div class="team-card-bio">${m.bio}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('section-management').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>${c.title}</strong></h2>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container">
+        <div class="team-grid">${cards}</div>
       </div>
     </div>
     ${buildFooterHTML()}`;
@@ -723,7 +1104,11 @@ function buildPortfolio() {
 // ===== BUILD ABOUT =====
 function buildAbout() {
   const c = CONTENT.about;
-  const pills = c.values.map(v => `<div class="value-pill">${v}</div>`).join('');
+  const mCards = c.methodology.map(m => `
+    <div class="method-card">
+      <h4>${m.title}</h4>
+      <p>${m.desc}</p>
+    </div>`).join('');
   document.getElementById('section-about').innerHTML = `
     <div class="page-hero">
       <div class="container">
@@ -739,14 +1124,15 @@ function buildAbout() {
             <div class="key-number"><div class="num">✓</div><div class="lbl">${c.personal}</div></div>
           </div>
           <div class="text-col">
-            <h3>${c.title}</h3>
             <p>${c.p1}</p>
             <p>${c.p2}</p>
-            <p>${c.p3}</p>
             <span class="license-tag" style="margin-top:16px;">${c.license}</span>
           </div>
         </div>
-        <div class="values-strip">${pills}</div>
+        <div style="margin-top:56px;">
+          <h2 class="section-h2">${c.methodologyTitle}</h2>
+          <div class="methodology-grid">${mCards}</div>
+        </div>
       </div>
     </div>
     ${buildFooterHTML()}`;
@@ -770,34 +1156,12 @@ function buildContact() {
           <div class="cline">📞 <a href="tel:${c.contactPhone}">${c.contactPhone}</a></div>
           <div class="cline">✉ <a href="mailto:${c.contactEmail}">${c.contactEmail}</a></div>
         </div>
-        <div class="contact-form">
-          <form id="contactForm" onsubmit="handleForm(event)">
-            <div class="field">
-              <label>${c.formName}</label>
-              <input type="text" required placeholder="${c.formName}">
-            </div>
-            <div class="field">
-              <label>${c.formPhone}</label>
-              <input type="tel" required placeholder="${c.formPhone}">
-            </div>
-            <div class="field">
-              <label>${c.formMessage}</label>
-              <textarea required placeholder="${c.formMessage}"></textarea>
-            </div>
-            <button type="submit" class="btn-primary">${c.formBtn}</button>
-            <div class="form-success" id="formSuccess">${c.formSuccess}</div>
-          </form>
+        <div class="contact-form-wrap">
+          ${buildFormHTML(c, true)}
         </div>
       </div>
     </div>
     ${buildFooterHTML()}`;
-}
-
-function handleForm(e) {
-  e.preventDefault();
-  document.getElementById('contactForm').style.opacity = '0.5';
-  document.getElementById('contactForm').style.pointerEvents = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
 }
 
 // ===== INIT =====
@@ -805,12 +1169,13 @@ buildNavbar();
 buildHome();
 buildFunds();
 buildPortfolio();
+buildQualified();
+buildManagement();
 buildAbout();
 buildContact();
 
-// Handle direct URL hash
-const hash = window.location.hash.replace('#', '');
-if (hash && CONTENT.nav.map(n => n.id).includes(hash)) showSection(hash);
+const _hash = window.location.hash.replace('#', '');
+if (_hash && CONTENT.nav.some(n => n.id === _hash)) showSection(_hash);
 </script>
 </body>
 </html>
