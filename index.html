@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>סלע בית השקעות מבית SPHERA</title> 
+<title>סלע בית השקעות מבית SPHERA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -159,13 +159,17 @@ body {
   text-align: center;
   border-bottom: 1px solid var(--gray-border);
 }
-.hero-label {
+.hero-badge {
+  display: inline-block;
+  border: 1.5px solid var(--navy);
   color: var(--navy);
   font-size: 11px;
-  letter-spacing: 4px;
   font-weight: 600;
-  opacity: 0.6;
-  margin-bottom: 20px;
+  letter-spacing: 3px;
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  opacity: 0.7;
 }
 .hero-title {
   color: var(--navy);
@@ -201,6 +205,7 @@ body {
   padding: 24px 20px;
   text-align: right;
 }
+.hero-bullet-icon { font-size: 28px; margin-bottom: 10px; }
 .hero-bullet h4 {
   color: var(--navy);
   font-size: 15px;
@@ -605,9 +610,9 @@ const CONTENT = {
     heroTitleStrong:  'אצלכם בחשבון',
     heroBody:         'סלע בית השקעות מחברת בין תשתיות המחקר של קבוצת Sphera לניהול ההשקעות המסורתי והמוכר בחשבונות הבנק של הלקוח. אנו מציעים סטנדרט חדש של ניהול השקעות — סלע של יציבות וצמיחה עבור ההון שלכם. ניהול דינמי הממוקד בזיהוי הזדמנויות ערך יוצאות דופן בשוק הישראלי ומעבר לים.',
     heroBullets: [
-      { title: 'חשיבה מחוץ לקופסא',  desc: 'ניהול השקעות הנשען על חשיבה מחוץ לקופסה ושימוש באסטרטגיות ניהול מתקדמות' },
-      { title: 'הניהול של סלע',        desc: 'אסטרטגיה אקטיבית השואפת לייצר אלפא דרך זיהוי הזדמנויות בארץ ובעולם' },
-      { title: 'הביטחון שלכם',          desc: 'ניהול תיק ההשקעות ישירות בחשבון הבנק האישי, בשקיפות ובנזילות מלאה' },
+      { icon: '💡', title: 'חשיבה מחוץ לקופסא',  desc: 'ניהול השקעות הנשען על חשיבה מחוץ לקופסה ושימוש באסטרטגיות ניהול מתקדמות' },
+      { icon: '📈', title: 'הניהול של סלע',        desc: 'אסטרטגיה אקטיבית השואפת לייצר אלפא דרך זיהוי הזדמנויות בארץ ובעולם' },
+      { icon: '🛡️', title: 'הביטחון שלכם',         desc: 'ניהול תיק ההשקעות ישירות בחשבון הבנק האישי, בשקיפות ובנזילות מלאה' },
     ],
     heroBtnFunds:     'קרנות נאמנות',
     heroBtnPortfolio: 'ניהול תיקים',
@@ -882,13 +887,14 @@ function buildHome() {
   const c = CONTENT.home;
   const bullets = c.heroBullets.map(b => `
     <div class="hero-bullet">
+      <div class="hero-bullet-icon">${b.icon}</div>
       <h4>${b.title}</h4>
       <p>${b.desc}</p>
     </div>`).join('');
   document.getElementById('section-home').innerHTML = `
     <div class="hero">
       <div class="container">
-        <div class="hero-label">${c.heroLabel}</div>
+        <div class="hero-badge">SELA &times; SPHERA</div>
         <h1 class="hero-title">${c.heroTitle} <strong>${c.heroTitleStrong}</strong></h1>
         <p class="hero-body">${c.heroBody}</p>
         <div class="hero-bullets">${bullets}</div>
