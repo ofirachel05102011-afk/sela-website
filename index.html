@@ -254,11 +254,15 @@ body {
   padding: 36px 32px;
   border: 1px solid var(--gray-border);
   box-shadow: 0 2px 12px rgba(27,58,107,0.06);
+  display: flex;
+  flex-direction: column;
 }
 .service-icon { font-size: 30px; margin-bottom: 16px; }
 .service-card h3 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 12px; }
-.service-card p { color: var(--gray-text); font-size: 14px; line-height: 1.75; margin-bottom: 20px; }
+.service-card p { color: var(--gray-text); font-size: 14px; line-height: 1.75; margin-bottom: 0; }
 .service-link {
+  margin-top: auto;
+  padding-top: 20px;
   color: var(--navy);
   font-size: 14px;
   font-weight: 600;
