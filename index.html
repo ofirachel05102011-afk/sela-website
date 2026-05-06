@@ -616,6 +616,10 @@ body {
   .contact-layout { flex-direction: column; }
   .contact-card { min-width: unset; width: 100%; }
   .team-grid { grid-template-columns: 1fr; }
+  .team-card-n0 { order: 0; }
+  .team-card-n1 { order: 2; } /* דודי בראל → 3rd on mobile */
+  .team-card-n2 { order: 1; } /* דודי קטש → 2nd on mobile */
+  .team-card-n3 { order: 3; }
   .methodology-grid { grid-template-columns: 1fr; }
   .footer-main { flex-direction: column; gap: 24px; }
   .footer-links { justify-content: flex-start; }
@@ -1183,12 +1187,12 @@ function buildQualified() {
 // ===== BUILD MANAGEMENT =====
 function buildManagement() {
   const c = CONTENT.management;
-  const cards = c.team.map(m => {
+  const cards = c.team.map((m, i) => {
     const photoEl = m.hasPhoto
       ? `<img class="team-avatar" src="${DUDI_PHOTO}" alt="${m.name}">`
       : `<div class="team-initials">${m.name.charAt(0)}</div>`;
     return `
-    <div class="team-card${m.featured ? ' team-card-featured' : ''}">
+    <div class="team-card team-card-n${i}${m.featured ? ' team-card-featured' : ''}">
       <div class="team-card-header">
         ${photoEl}
         <div>
