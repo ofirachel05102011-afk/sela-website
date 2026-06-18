@@ -31,7 +31,8 @@ h1,h2,h3,h4{ font-weight:300; letter-spacing:1px; }
 .btn-outline:hover{ border-color:var(--cream); color:var(--cream); }
 
 #navbar{ position:sticky; top:0; z-index:100; background:rgba(7,15,28,0.9); backdrop-filter:blur(14px); height:var(--nav-height); border-bottom:1px solid var(--line); }
-.nav-inner{ height:100%; display:flex; align-items:center; justify-content:space-between; }
+.nav-inner{ height:100%; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+#navbar .container{ max-width:1320px; }
 .nav-logo{ color:var(--cream); font-size:19px; font-weight:300; letter-spacing:1.5px; cursor:pointer; white-space:nowrap; flex-shrink:0; padding-bottom:9px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 11 Q60 1 118 11' stroke='%23aebfd6' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") bottom 2px center/44px no-repeat; }
 .nav-logo span{ font-weight:300; font-size:9px; letter-spacing:2px; color:var(--accent); margin-right:5px; }
 .nav-links{ display:flex; gap:17px; list-style:none; }

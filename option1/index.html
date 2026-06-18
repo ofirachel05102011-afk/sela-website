@@ -32,7 +32,8 @@ h1,h2,h3,h4{ font-family:var(--head); font-weight:400; }
 .btn-outline:hover{ border-color:var(--gold); color:var(--gold); }
 
 #navbar{ position:sticky; top:0; z-index:100; background:rgba(12,33,64,0.88); backdrop-filter:blur(12px); height:var(--nav-height); border-bottom:1px solid var(--line); }
-.nav-inner{ height:100%; display:flex; align-items:center; justify-content:space-between; }
+.nav-inner{ height:100%; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+#navbar .container{ max-width:1320px; }
 .nav-logo{ font-family:var(--head); color:var(--cream); font-size:19px; letter-spacing:0.5px; cursor:pointer; white-space:nowrap; flex-shrink:0; padding-bottom:9px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 11 Q60 1 118 11' stroke='%23c4a468' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") bottom 2px center/44px no-repeat; }
 .nav-logo span{ font-family:'Heebo'; font-weight:500; font-size:9px; letter-spacing:2px; color:var(--gold); margin-right:4px; }
 .nav-links{ display:flex; gap:17px; list-style:none; }
