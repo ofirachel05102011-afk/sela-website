@@ -542,6 +542,7 @@ body {
 
 /* ===== CONTACT PAGE ===== */
 .contact-layout { display: flex; gap: 56px; align-items: flex-start; }
+.contact-cards { display: flex; flex-direction: column; gap: 20px; }
 .contact-card {
   background: var(--navy);
   color: var(--white);
@@ -833,6 +834,10 @@ const CONTENT = {
     contactRole:      'שיווק בנקים',
     contactPhone:     '052-4794858',
     contactEmail:     'yuvala@sela-inv.co.il',
+    contact2Name:     'דודי בראל',
+    contact2Role:     'שותף מנהל פעילות ניהול תיקים',
+    contact2Phone:    '050-4012436',
+    contact2Email:    'dudib@sela-inv.co.il',
     formNameLabel:    'שם מלא',
     formPhoneLabel:   'טלפון',
     formEmailLabel:   'דוא"ל',
@@ -1268,11 +1273,19 @@ function buildContact() {
     </div>
     <div class="content-section">
       <div class="container contact-layout">
-        <div class="contact-card">
-          <h3>${c.contactName}</h3>
-          <div class="role">${c.contactRole}</div>
-          <div class="cline">📞 <a href="tel:${c.contactPhone}">${c.contactPhone}</a></div>
-          <div class="cline">✉ <a href="mailto:${c.contactEmail}">${c.contactEmail}</a></div>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <h3>${c.contactName}</h3>
+            <div class="role">${c.contactRole}</div>
+            <div class="cline">📞 <a href="tel:${c.contactPhone}">${c.contactPhone}</a></div>
+            <div class="cline">✉ <a href="mailto:${c.contactEmail}">${c.contactEmail}</a></div>
+          </div>
+          <div class="contact-card">
+            <h3>${c.contact2Name}</h3>
+            <div class="role">${c.contact2Role}</div>
+            <div class="cline">📞 <a href="tel:${c.contact2Phone}">${c.contact2Phone}</a></div>
+            <div class="cline">✉ <a href="mailto:${c.contact2Email}">${c.contact2Email}</a></div>
+          </div>
         </div>
         <div class="contact-form-wrap">
           ${buildFormHTML(c, true)}
