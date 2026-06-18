@@ -463,6 +463,14 @@ body {
 .funds-disclaimer p { margin-bottom: 10px; }
 .funds-disclaimer p:last-child { margin-bottom: 0; }
 
+/* ===== DISCLOSURE PAGE ===== */
+.disclosure-body { max-width: 900px; margin: 0 auto; color: var(--gray-text); font-size: 14px; line-height: 1.85; }
+.disclosure-body > p { margin-bottom: 16px; }
+.disclosure-list { list-style: decimal; padding-right: 22px; margin: 0 0 16px; }
+.disclosure-list > li { margin-bottom: 14px; padding-right: 6px; }
+.disclosure-body .funds-table { margin: 18px 0; }
+.disclosure-body .funds-disclaimer { background: var(--gray-light); }
+
 /* ===== MANAGEMENT TEAM ===== */
 .team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
 .team-card-featured { grid-column: 1 / -1; max-width: 560px; margin: 0 auto; width: 100%; }
@@ -638,6 +646,7 @@ body {
 <div id="section-management" class="section"></div>
 <div id="section-about"      class="section"></div>
 <div id="section-contact"    class="section"></div>
+<div id="section-disclosure" class="section"></div>
 
 <script>
 // ============================================================
@@ -658,6 +667,7 @@ const CONTENT = {
     { id: 'management', label: 'הנהלת החברה' },
     { id: 'about',      label: 'אודות' },
     { id: 'contact',    label: 'צור קשר' },
+    { id: 'disclosure', label: 'גילוי נאות' },
   ],
 
   /* ====== HOME ====== */
@@ -738,7 +748,7 @@ const CONTENT = {
     ceoSection:  'דבר המנכ"ל',
     ceoQuote:    'אחרי שנים ארוכות בשוק ההון, אני מאמין שניהול השקעות מוצלח נמדד ביכולת לייצר יציבות לאורך זמן מבלי לוותר על זיהוי הזדמנויות ערך. בסלע בחרנו לחבר בין מקצוענות חסרת פשרות לבין שירות אישי וממוקד. המטרה שלנו היא להיות עבורכם "סלע" של ביטחון מקצועי בעולם פיננסי משתנה — ולהבטיח שההון שלכם ינוהל בסטנדרטים הגבוהים ביותר ולא פחות חשוב, שתרגישו בבית.',
     ceoName:     'דודי בראל',
-    ceoRole:     'מנכ"ל משותף, סלע בית השקעות',
+    ceoRole:     'שותף מנהל פעילות ניהול תיקים',
     ceoPhone:    '050-4012436',
     ceoSignoff:  'תמיד כאן,',
     formNameLabel:  'שם מלא',
@@ -1272,6 +1282,62 @@ function buildContact() {
     ${buildFooterHTML()}`;
 }
 
+// ===== BUILD DISCLOSURE =====
+function buildDisclosure() {
+  const fundRows = `
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/5123831" target="_blank" rel="noopener">סלע (0B) (!)^ אג"ח כללי ללא מניות</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/5123831" target="_blank" rel="noopener">5123831</a></td></tr>
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/5123823" target="_blank" rel="noopener">סלע (1B) 10/90</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/5123823" target="_blank" rel="noopener">5123823</a></td></tr>
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/5123815" target="_blank" rel="noopener">סלע (4B) מניות</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/5123815" target="_blank" rel="noopener">5123815</a></td></tr>
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/5141791" target="_blank" rel="noopener">סלע (4B) מניות ערך ישראל</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/5141791" target="_blank" rel="noopener">5141791</a></td></tr>
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/5137823" target="_blank" rel="noopener">סלע (4D) אגד חוץ מנייתי – נקוב$</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/5137823" target="_blank" rel="noopener">5137823</a></td></tr>
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/5133343" target="_blank" rel="noopener">סלע (2B)י 20/80</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/5133343" target="_blank" rel="noopener">5133343</a></td></tr>
+    <tr><td><a href="https://maya.tase.co.il/he/funds/mutual-funds/1216670" target="_blank" rel="noopener">סלע (5E) MULTI-STRATEGY – קרן גידור בנאמנות</a></td><td class="fund-number"><a href="https://maya.tase.co.il/he/funds/mutual-funds/1216670" target="_blank" rel="noopener">1216670</a></td></tr>`;
+  document.getElementById('section-disclosure').innerHTML = `
+    <div class="page-hero">
+      <div class="container">
+        <h2><strong>גילוי נאות</strong></h2>
+        <p>כתב גילוי נאות - זיקה</p>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="container">
+        <div class="disclosure-body">
+          <p>בהתאם לסעיף 16א(א)2 לחוק הסדרת העיסוק בייעוץ השקעות, בשיווק השקעות ובניהול תיקי השקעות, התשנ"ה-1995 (להלן: "החוק"), סלע בית השקעות (2016) בע"מ (להלן – "מנהל התיקים") מתכבדת להביא לידיעתכם כי:</p>
+          <ol class="disclosure-list">
+            <li>מנהל התיקים עוסק בניהול תיקי השקעות ושיווק השקעות ולא בייעוץ השקעות.</li>
+            <li>למנהל התיקים זיקה לקרנות הנאמנות המנוהלות על ידי איילון קרנות נאמנות בע"מ (להלן: "הקרנות הקשורות" או "הנכסים הקשורים") המפורטות ומתעדכנות מעת לעת. להלן הקרנות הקשורות:
+              <div class="funds-table-wrap">
+                <table class="funds-table">
+                  <thead><tr><th>שם הקרן</th><th style="width:140px;">מספר נייר</th></tr></thead>
+                  <tbody>${fundRows}</tbody>
+                </table>
+              </div>
+            </li>
+            <li>מנהל התיקים עשוי להשקיע ולהעדיף את הנכסים הקשורים על פני נכסים פיננסיים אחרים שאין למנהל התיקים זיקה אליהם, הדומים מבחינת התאמתם ללקוח.</li>
+            <li>מהות הזיקה של מנהל התיקים לנכסים הקשורים: איילון קרנות נאמנות בע"מ, זכאית לדמי ניהול ושיעור הוספה בגין רכישת יחידות של הקרנות הקשורות או המשך החזקתן בחשבון הלקוח ומנהל התיקים אשר מנהל את תיק ההשקעות של הקרנות הקשורות ואף עשוי לשווק את היחידות של הקרנות הקשורות מקבל תשלום ו/או תגמול בקשר עם רכישת יחידות של הקרנות הקשורות או בקשר עם המשך החזקתן בחשבון הלקוח.</li>
+            <li>רשימת הנכסים הפיננסים שמנהל התיקים הינו בעל זיקה אליהם, כמפורט לעיל עשויה להשתנות מעת לעת.</li>
+            <li>מנהל התיקים עשוי, במישרין או בעקיפין, להחזיק ולפעול עבור עצמו בניירות ערך ובנכסים פיננסיים הנרכשים/ נמכרים מ/לחשבון הלקוח לפני ו/או במהלך ו/או אחרי ביצוע העסקאות כאמור עבור הלקוח.</li>
+            <li>באתר האינטרנט של החברה יעודכן גם כתב "גילוי נאות".</li>
+          </ol>
+          <div class="funds-disclaimer">
+            <p>אין לראות באמור משום ייעוץ או שיווק השקעות לרבות יעוץ מס או משום ייעוץ או שיווק פנסיוני. האמור לעיל אינו מהווה חלופה לייעוץ אישי המותאם לצרכיו של הלקוח ע"י יועץ מוסמך. אין באמור התחייבות מטעם מנהל התיקים להשגת תשואה עודפת. אין באמור הצעה לרכישת יחידות בקרנות. רכישת יחידות בקרנות תעשה על בסיס תשקיפי הקרנות שבתוקף במועד רכישתן ובהתאם לדיווחים של החברה המנפיקה של יחידות ההשתתפות, כפי שניתנים מעת לעת. אין בתשואת הקרן בעבר כדי להבטיח תשואה דומה בעתיד ואין לראות באמור לעיל התחייבות של מנהל הקרנות להשגת תשואה כלשהי ט.ל.ח.</p>
+            <p>^ סימן קריאה בשם הקרן מציין כי על פי מדיניות ההשקעות שלה, עשויה להיווצר בה חשיפה לסיכון אשראי הנובע מחשיפה לאג"ח שאינן מדורגות בדירוג השקעה (כהגדרתן להלן) או מפעילות בנגזרים עם או באמצעות תאגידים אשר נמנים עם קבוצת סיכון האשראי השנייה, או מהפקדת מזומנים ופיקדונות אצל תאגידים כאמור, או משווי נייר ערך חוץ שהושאל באמצעות חבר בורסה ישראלי אשר אינו עונה על התנאים הקבועים בקבוצת סיכון האשראי הראשונה (להלן: "חשיפה לבנקים וברוקרים"), בתוספת חשיפה לאגרות חוב של חברות נטולות זיקה לישראל למעט אם הן בדירוג AAil ומעלה או דירוג מקביל לו, בנסיבות או בשיעורים הבאים:</p>
+            <p>השיעור הכולל של חשיפה לאג"ח שאינן מדורגות בדרוג השקעה וחשיפה לבנקים וברוקרים, בתוספת חשיפה לאגרות חוב של חברות נטולות זיקה לישראל למעט אם הן בדירוג AAil ומעלה או דירוג מקביל לו, עשוי לעלות על שיעור החשיפה המרבי של הקרן למניות, כעולה מפרופיל החשיפה של הקרן;</p>
+            <p>שיעור החשיפה לבנק או ברוקר מסוים עשוי לעלות על 10% משווי נכסי הקרן ושיעור החשיפה לבנקים וברוקרים עשוי לעלות על 20% משווי נכסי הקרן (והכול ללא קשר לפרופיל החשיפה של הקרן למניות);</p>
+            <p>לעניין זה:<br>
+            • קבוצת סיכון אשראי ראשונה או שנייה – כהגדרתה בנספח להוראה למנהלי הקרנות והנאמנים בדבר סיכוני קסטודי וסיכוני אשראי.<br>
+            • "אגרות חוב של חברות נטולות זיקה לישראל" – לפי מועדי הכניסה לתוקף שנקבעו בהוראה מטעם רשות ניירות ערך למנהלי הקרנות בדבר גילוי בשם הקרן אודות חשיפה אפשרית לאג"ח שאינן מדורגות בדירוג השקעה, לאג"ח של חברות נטולות זיקה לישראל, ולתאגיד בנקאי אצלו מוחזקים מזומנים ופקדונות של הקרן (נוסח חדש – 2021).<br>
+            • "חברה נטולת זיקה לישראל" – חברה שמתקיימים לגביה כל אלה: (1) אגרות חוב שלה רשומות למסחר בישראל; (2) מקום התאגדותה הוא מחוץ לישראל; (3) מניותיה לא הוצעו לציבור בישראל; (4) ניהול עסקיה מתקיים מחוץ לישראל. לעניין זה יראו חברה כחברה שניהול עסקיה בתוך ישראל אם המנהל הכללי שלה או יו"ר פעיל שלה (יו"ר דירקטוריון המועסק בתפקידו בשיעור העולה על 50% משרה) הם תושבי ישראל ומרבית חברי הדירקטוריון שלה הם תושבי ישראל.<br>
+            • דירוג AAil כאמור לעיל או דירוג מקביל לו – לא כולל דירוג (AAil-) או דירוג מקביל לו.</p>
+            <p>"אג"ח שאינו בדירוג השקעה" – איגרות חוב קונצרניות ו/או אג"ח שהנפיקה מדינה שאינה מדינת ישראל, שאינה מדורגת, או שהיא מדורגת בדירוג נמוך מ-(BBB-) או דירוג מקביל לו.</p>
+            <p>הסבר על ערכי החשיפה: הערך 4 מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 120% מהשווי הנקי של נכסי הקרן למניות. הערך 1 מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 10% מהשווי הנקי של נכסי הקרן למניות. הערך 0 מבטא ללא חשיפה למניות/ ללא חשיפה למט"ח. הערך 2 מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 30% מהשווי הנקי של נכסי הקרן למניות. הערך 5 מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 200% מהשווי הנקי של נכסי הקרן למניות. הערך B- מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 30% מהשווי הנקי של נכסי הקרן למטבע חוץ. הערך D- מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 120% מהשווי הנקי של נכסי הקרן למטבע חוץ. הערך E- מבטא שיעור חשיפה מרבי, בערך מוחלט, של עד 200% מהשווי הנקי של נכסי הקרן למטבע חוץ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    ${buildFooterHTML()}`;
+}
+
 // ===== INIT =====
 buildNavbar();
 buildHome();
@@ -1281,6 +1347,7 @@ buildQualified();
 buildManagement();
 buildAbout();
 buildContact();
+buildDisclosure();
 
 const _hash = window.location.hash.replace('#', '');
 if (_hash && CONTENT.nav.some(n => n.id === _hash)) showSection(_hash);
