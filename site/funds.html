@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סלע בית השקעות — קרנות נאמנות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><div class="container nav-in">
+  <div class="nav-links">
+    <a href="index.html">ראשי</a>
+    <a href="funds.html" class="active">קרנות נאמנות</a>
+    <a href="management.html">הנהלת החברה</a>
+    <a href="disclosure.html">גילוי נאות</a>
+    <a href="contact.html" class="nav-cta">צור קשר</a>
+  </div>
+  <a href="index.html"><img class="logo" src="../sela_logo.png" alt="סלע בית השקעות"></a>
+</div></nav>
+
+<section class="page-hero"><div class="container">
+  <h1>קרנות נאמנות</h1>
+  <div class="arc"><svg width="260" height="14" viewBox="0 0 260 14"><path d="M4 11 Q130 1 256 11" stroke="#a3d9fb" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <p class="section-lead">את קרנות הנאמנות שלנו, אנחנו בוחרים בקפידה. סלע מנהלת שמונה קרנות נאמנות, מתוכן ארבע קרנות נאמנות מסורתיות וארבע קרנות נאמנות בגידור. כל אחת מהקרנות שלנו פועלת בסטנדרטים הגבוהים ביותר של ניהול ההשקעות תוך עבודה משותפת עם מחלקת המחקר של קרנות הגידור של SPHERA.</p>
+</div></section>
+
+<section class="section gray"><div class="container">
+  <div class="stitle">דברו איתנו</div>
+  <div class="form-wrap">
+    <form onsubmit="return sela_ok(event)">
+      <div class="field"><label>שם מלא</label><input type="text" required></div>
+      <div class="field"><label>טלפון</label><input type="tel" required></div>
+      <div class="field"><label>דוא"ל</label><input type="email"></div>
+      <div class="field"><label>הודעה</label><textarea></textarea></div>
+      <button type="submit" class="form-btn">שליחה</button>
+      <div class="form-ok">תודה! קיבלנו את פרטיכם ונחזור אליכם בהקדם.</div>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="container">© 2026 סלע בית השקעות · הבית שלך להשקעות · <a href="disclosure.html">גילוי נאות</a></div></footer>
+
+<script>function sela_ok(e){e.preventDefault();var f=e.target;f.querySelector('.form-ok').style.display='block';f.querySelectorAll('input,textarea,button').forEach(function(x){x.disabled=true;});return false;}</script>
+</body>
+</html>
