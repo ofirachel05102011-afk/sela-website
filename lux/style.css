@@ -21,11 +21,11 @@ a{text-decoration:none;color:inherit;}
 .nav-cta:hover{background:var(--sky);color:var(--bg) !important;}
 
 /* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;overflow:hidden;}
+.hero{position:relative;min-height:80vh;display:flex;align-items:flex-start;justify-content:center;text-align:center;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:url('../hero.jpg') center 30%/cover no-repeat;}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,20,36,.62) 0%,rgba(10,20,36,.35) 40%,rgba(10,20,36,.78) 78%,var(--bg) 100%);}
 .ghost{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);font-size:34vw;font-weight:800;color:rgba(163,217,251,.05);line-height:1;pointer-events:none;white-space:nowrap;z-index:1;}
-.hero-c{position:relative;z-index:2;padding:130px 24px 72px;}
+.hero-c{position:relative;z-index:2;padding:140px 24px 50px;}
 .eyebrow{font-size:14px;letter-spacing:9px;color:var(--sky);font-weight:600;margin-bottom:26px;}
 .hero-c h1{font-size:64px;font-weight:200;letter-spacing:3px;color:#fff;line-height:1.18;}
 .hero-c h1 b{font-weight:600;}
@@ -40,13 +40,13 @@ a{text-decoration:none;color:inherit;}
 .phero{position:relative;min-height:44vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
 .phero .hero-bg{background-position:center 34%;}
 .phero .hero-bg::after{background:linear-gradient(to bottom,rgba(10,20,36,.7),rgba(10,20,36,.82) 70%,var(--bg) 100%);}
-.phero-c{position:relative;z-index:2;padding:130px 24px 44px;}
+.phero-c{position:relative;z-index:2;padding:118px 24px 26px;}
 .phero-c h1{font-size:44px;font-weight:200;letter-spacing:2px;color:#fff;}
 .phero-c p{margin-top:12px;font-size:16px;font-weight:300;color:#cdd7ea;}
 
 /* SECTIONS */
 .section{padding:92px 0;}
-.section.tight{padding-top:46px;}
+.section.tight{padding-top:34px;}
 .section.alt{background:var(--bg2);}
 .eyebrow-c{text-align:center;font-size:13px;letter-spacing:7px;color:var(--sky);font-weight:600;margin-bottom:16px;}
 .stitle{text-align:center;font-size:34px;font-weight:200;letter-spacing:1.5px;line-height:1.25;color:var(--cream);margin-bottom:6px;}
