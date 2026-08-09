@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סלע בית השקעות — צור קשר</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="nav"><div class="container nav-in">
+  <div class="nav-links">
+    <a href="index.html">ראשי</a>
+    <a href="funds.html">קרנות נאמנות</a>
+    <a href="management.html">הנהלת החברה</a>
+    <a href="disclosure.html" class="navlink-hide">גילוי נאות</a>
+    <a href="contact.html" class="nav-cta">צור קשר</a>
+  </div>
+  <a href="index.html"><img class="logo" src="../sela_logo_white.png" alt="סלע בית השקעות"></a>
+</div></nav>
+
+<section class="phero">
+  <div class="hero-bg"></div>
+  <div class="phero-c">
+    <h1>צור קשר</h1>
+    <div class="arc"><svg width="190" height="12" viewBox="0 0 190 12"><path d="M4 9 Q95 1 186 9" stroke="#a3d9fb" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg></div>
+    <p>נשמח לשמוע מכם ולענות על כל שאלה.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-cards">
+        <div class="ccard">
+          <h3>יובל אהרוני</h3>
+          <div class="role">שיווק בנקים</div>
+          <div class="cl">☎ <a href="tel:0524794858">052-4794858</a></div>
+          <div class="cl">✉ <a href="mailto:yuvala@sela-inv.co.il">yuvala@sela-inv.co.il</a></div>
+        </div>
+        <div class="ccard">
+          <h3>דודי בראל</h3>
+          <div class="role">שותף מנהל פעילות ניהול תיקים</div>
+          <div class="cl">☎ <a href="tel:0504012436">050-4012436</a></div>
+          <div class="cl">✉ <a href="mailto:dudib@sela-inv.co.il">dudib@sela-inv.co.il</a></div>
+        </div>
+      </div>
+      <div class="contact-form-col">
+        <div class="form-wrap">
+          <form onsubmit="return sela_ok(event)">
+            <div class="field"><label>שם מלא</label><input type="text" required></div>
+            <div class="field"><label>טלפון</label><input type="tel" required></div>
+            <div class="field"><label>דוא"ל</label><input type="email"></div>
+            <div class="field"><label>הודעה</label><textarea></textarea></div>
+            <button type="submit" class="form-btn">שליחה</button>
+            <div class="form-ok">תודה! קיבלנו את פרטיכם ונחזור אליכם בהקדם.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">© 2026 סלע בית השקעות · הבית שלך להשקעות · <a href="disclosure.html">גילוי נאות</a></div></footer>
+
+<script>
+var nav=document.getElementById('nav');function onScroll(){nav.classList.toggle('solid',window.scrollY>60);}window.addEventListener('scroll',onScroll);onScroll();
+function sela_ok(e){e.preventDefault();var f=e.target;f.querySelector('.form-ok').style.display='block';f.querySelectorAll('input,textarea,button').forEach(function(x){x.disabled=true;});return false;}
+</script>
+</body>
+</html>
